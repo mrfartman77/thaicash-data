@@ -1,0 +1,28 @@
+name: booth-rates
+
+on:
+  schedule:
+    # Every 2 hours, 02:07–12:07 UTC = 09:07–19:07 Bangkok (booth business hours)
+    - cron: "7 2-12/2 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scrape booth rates
+        run: python3 scrapers/booth_rates.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "booth-rates-bot"
+          git config user.email "actions@github.com"
+          git add data/booth-rates.json
+          git diff --cached --quiet && echo "no change" && exit 0
+          git commit -m "booth rates $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push

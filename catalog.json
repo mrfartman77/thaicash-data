@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 3,
+  "catalogUpdated": "2026-06-10",
+  "booths": [
+    { "id": "superrich_th", "name": "SuperRich Thailand", "quality": "best",
+      "areas": "Ratchadamri HQ · counters at major BTS stops",
+      "note": "The benchmark board. Big, clean $100 notes get the top rate.",
+      "mapsQuery": "SuperRich Thailand currency exchange" },
+    { "id": "superrich_1965", "name": "SuperRich 1965", "quality": "best",
+      "areas": "Ratchadamri · Silom",
+      "mapsQuery": "Super Rich 1965 exchange Bangkok" },
+    { "id": "vasu", "name": "Vasu Exchange", "quality": "best",
+      "areas": "133 Sukhumvit Rd · BTS Nana",
+      "mapsQuery": "Vasu Exchange 133 Sukhumvit Road Bangkok",
+      "mapsPlaceId": "I2CA0D46D648E97D3" },
+    { "id": "siam_exchange", "name": "Siam Exchange", "quality": "good",
+      "areas": "422/3 Phaya Thai Rd · BTS National Stadium",
+      "mapsQuery": "Siam Exchange 422/3 Phaya Thai Road Pathum Wan Bangkok" },
+    { "id": "k79", "name": "K79 Exchange", "quality": "good",
+      "areas": "2063 Sukhumvit Rd · BTS On Nut",
+      "mapsQuery": "K79 Money Exchange 2063 Sukhumvit Road On Nut Bangkok" },
+    { "id": "airport_bank", "name": "Airport & bank counters", "quality": "avoid",
+      "areas": "Everywhere convenient",
+      "note": "Convenience is priced in — typically 1.5–3% worse than the chains above." }
+  ],
+  "atmHostFeeThb": 220,
+  "atmCapThb": 20000,
+  "legs": [
+    {
+      "id": "booth",
+      "label": "Exchange booth",
+      "group": "cash_in_hand",      "rateSource": "quoted",
+      "typicalBoothMargin": 0.005,
+      "acceptance": "wide",
+      "volatility": "low",
+      "notes": "Reputable booths charge no commission — the rate is the whole story. Large, clean $100 notes get the best rate.",
+      "fees": []
+    },
+    {
+      "id": "wise_card_atm",
+      "label": "Wise card · ATM",
+      "group": "cash_in_hand",      "rateSource": "mid_market",
+      "amountCapThb": 20000,
+      "freeAtmAmountThb": 4000,
+      "freeAtmWithdrawals": 2,
+      "acceptance": "wide",
+      "volatility": "medium",
+      "fees": [
+        { "kind": "pct_usd", "value": 0.0045, "source": "stored", "label": "Wise FX fee" },
+        { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
+        { "kind": "flat_usd", "value": 0.50, "per": "withdrawal", "when": { "overFreeAtm": true }, "source": "stored", "label": "Wise ATM fixed fee" },
+        { "kind": "pct_usd", "value": 0.0175, "feeOn": "over_allowance", "when": { "overFreeAtm": true }, "source": "stored", "label": "Wise ATM over-allowance" }
+      ]
+    },
+    {
+      "id": "atm_debit",
+      "label": "Debit card · ATM",
+      "group": "cash_in_hand",      "rateSource": "mid_market",
+      "amountCapThb": 20000,
+      "acceptance": "wide",
+      "volatility": "high",
+      "fees": [
+        { "kind": "pct_usd", "value": 0.03, "source": "user", "profileKey": "bank_ftf", "label": "Foreign-txn fee" },
+        { "kind": "flat_usd", "value": 5, "per": "withdrawal", "source": "user", "profileKey": "bank_atm_fee", "label": "Your bank's ATM fee" },
+        { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
+        { "kind": "rate_margin", "value": 0.05, "when": { "dccAccepted": true }, "source": "stored", "label": "DCC markup" }
+      ]
+    },
+    {
+      "id": "cc_advance",
+      "label": "Credit cash advance",
+      "group": "cash_in_hand",      "rateSource": "mid_market",
+      "amountCapThb": 20000,
+      "acceptance": "limited",
+      "acceptanceNote": "Amex / Discover often rejected at Thai ATMs",
+      "volatility": "low",
+      "interest": { "apr": 0.24, "accruesOnFees": true },
+      "fees": [
+        { "kind": "pct_usd", "value": 0.04, "minUsd": 10, "source": "user", "profileKey": "ca_fee", "interestBase": true, "label": "Cash-advance fee" },
+        { "kind": "pct_usd", "value": 0.03, "source": "user", "profileKey": "bank_ftf", "label": "Foreign-txn fee" },
+        { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
+        { "kind": "rate_margin", "value": 0.05, "when": { "dccAccepted": true }, "source": "stored", "label": "DCC markup" }
+      ]
+    },
+    {
+      "id": "wise_transfer_bank",
+      "label": "Wise transfer",
+      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
+      "fxMarginPct": 0.006,
+      "taxFlag": "thai_remittance_180d",
+      "volatility": "medium",
+      "fees": [
+        { "kind": "flat_usd", "value": 0.80, "source": "stored", "label": "Fixed fee" },
+        { "kind": "pct_usd", "value": 0.0045, "feeOn": "send", "source": "stored", "label": "Variable fee" },
+        { "kind": "pct_usd", "value": 0.0, "when": { "fundingSource": "bank_ach" }, "source": "stored", "label": "ACH funding" },
+        { "kind": "pct_usd", "value": 0.01, "when": { "fundingSource": "debit_card" }, "source": "stored", "label": "Debit-card funding" },
+        { "kind": "pct_usd", "value": 0.03, "when": { "fundingSource": "credit_card" }, "source": "stored", "label": "Credit-card funding" }
+      ]
+    },
+    {
+      "id": "remitly_transfer_bank",
+      "label": "Remitly",
+      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
+      "fxMarginPct": 0.015,
+      "taxFlag": "thai_remittance_180d",
+      "volatility": "medium",
+      "fees": [
+        { "kind": "flat_usd", "value": 3.99, "source": "stored", "label": "Transfer fee" }
+      ]
+    }
+  ]
+}

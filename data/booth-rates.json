@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "updated": "2026-06-10T07:26:53Z",
+  "rates": [
+    {
+      "id": "vasu",
+      "name": "Vasu Exchange",
+      "ok": true,
+      "usd100Buy": 32.83,
+      "fetchedAt": "2026-06-10T07:26:53Z"
+    },
+    {
+      "id": "k79",
+      "name": "K79 Exchange",
+      "ok": true,
+      "usd100Buy": 32.68,
+      "fetchedAt": "2026-06-10T07:26:53Z",
+      "siteTime": "2026-06-10 13:00:54 +07:00 (site)"
+    },
+    {
+      "id": "superrich_th",
+      "name": "SuperRich Thailand",
+      "ok": false,
+      "reason": "rates API requires auth \u2014 pending"
+    },
+    {
+      "id": "superrich_1965",
+      "name": "SuperRich 1965",
+      "ok": false,
+      "reason": "JS-rendered \u2014 pending endpoint discovery"
+    },
+    {
+      "id": "siam_exchange",
+      "name": "Siam Exchange",
+      "ok": false,
+      "reason": "React SPA \u2014 pending endpoint discovery"
+    }
+  ]
+}
