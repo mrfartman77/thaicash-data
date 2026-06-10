@@ -15,6 +15,8 @@ Design rules:
   back to reputation tiers for those
 """
 
+from __future__ import annotations   # PEP 604 (dict | None) hints on Python 3.7+
+
 import json
 import re
 import sys
@@ -28,10 +30,14 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
 SANITY_LO, SANITY_HI = 25.0, 45.0   # plausible THB-per-USD window
 
 
-def fetch(url: str, timeout: int = 20) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+def fetch(url: str, timeout: int = 20, headers: dict | None = None) -> str:
+    req = urllib.request.Request(url, headers={"User-Agent": UA, **(headers or {})})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read().decode("utf-8", errors="replace")
+
+
+def fetch_json(url: str, timeout: int = 20, headers: dict | None = None):
+    return json.loads(fetch(url, timeout=timeout, headers=headers))
 
 
 def first_rate_after(html: str, marker: str, window: int = 400):
@@ -61,13 +67,33 @@ def scrape_vasu():
     return first_rate_after(html, "USD 100"), None
 
 
+def scrape_superrich_th():
+    """SuperRich Thailand (the orange chain) — the benchmark Bangkok rate.
+
+    Its site reads a public JSON rate board at /api/v1/rates. The Basic-auth
+    token below is the fixed client credential the web app ships to every
+    visitor's browser (not a per-user secret); it gates the public endpoint
+    the same way for everyone. We read the USD denom-"100" buy rate.
+    """
+    auth = "Basic c3VwZXJyaWNoVGg6aFRoY2lycmVwdXM="
+    doc = fetch_json("https://www.superrichthailand.com/api/v1/rates",
+                     headers={"Authorization": auth, "Accept": "application/json"})
+    for cur in doc.get("data", {}).get("exchangeRate", []):
+        if cur.get("cUnit") != "USD":
+            continue
+        for row in cur.get("rate", []):
+            if str(row.get("denom")) == "100" and row.get("cBuying") is not None:
+                return float(row["cBuying"]), row.get("dateTime")
+    return None, None
+
+
 BOOTHS = [
     # (id matching catalog.json, display name, scraper or None, pending reason)
     ("vasu",           "Vasu Exchange",      scrape_vasu, None),
     ("k79",            "K79 Exchange",       scrape_k79,  None),
-    ("superrich_th",   "SuperRich Thailand", None, "rates API requires auth — pending"),
-    ("superrich_1965", "SuperRich 1965",     None, "JS-rendered — pending endpoint discovery"),
-    ("siam_exchange",  "Siam Exchange",      None, "React SPA — pending endpoint discovery"),
+    ("superrich_th",   "SuperRich Thailand", scrape_superrich_th, None),
+    ("superrich_1965", "SuperRich 1965",     None, "rate API is WAF-blocked (403) to non-browser clients"),
+    ("siam_exchange",  "Siam Exchange",      None, "site's own JS bundles 404 — no live rate source"),
 ]
 
 
