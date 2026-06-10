@@ -30,14 +30,17 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
 SANITY_LO, SANITY_HI = 25.0, 45.0   # plausible THB-per-USD window
 
 
-def fetch(url: str, timeout: int = 20, headers: dict | None = None) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": UA, **(headers or {})})
+def fetch(url: str, timeout: int = 20, headers: dict | None = None,
+          data: bytes | None = None, method: str | None = None) -> str:
+    req = urllib.request.Request(url, data=data, method=method,
+                                 headers={"User-Agent": UA, **(headers or {})})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read().decode("utf-8", errors="replace")
 
 
-def fetch_json(url: str, timeout: int = 20, headers: dict | None = None):
-    return json.loads(fetch(url, timeout=timeout, headers=headers))
+def fetch_json(url: str, timeout: int = 20, headers: dict | None = None,
+               data: bytes | None = None, method: str | None = None):
+    return json.loads(fetch(url, timeout=timeout, headers=headers, data=data, method=method))
 
 
 def first_rate_after(html: str, marker: str, window: int = 400):
@@ -87,12 +90,39 @@ def scrape_superrich_th():
     return None, None
 
 
+def scrape_sr1965():
+    """SuperRich 1965 (the green chain) — Nuxt site reads a public microservice API.
+
+    Two public calls (no login): GET an anonymous token from the oauth2 callback,
+    then POST the rate board for company A04 (= SR1965), branch "36" — their default
+    headline branch, the one the website shows and which carries the best board rate.
+    The USD "100-50" denomination is the large-note buy rate (the USD-100 equivalent).
+    """
+    token = json.loads(fetch(
+        "https://api.superrich1965.com/front/exchange-rate/oauth2/callback"))["accessToken"]
+    body = json.dumps({"filters": [
+        {"field": "company_code", "value": "A04"},
+        {"field": "branch_no", "value": "36"},
+    ]}).encode()
+    doc = fetch_json(
+        "https://www.superrich1965.com/api/exchange-rate-service/v1/external-app-exchange-rate/get",
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json",
+                 "Referer": "https://www.superrich1965.com/"},
+        data=body, method="POST")
+    for row in doc.get("data", {}).get("datas", []):
+        if row.get("currency_code") == "USD":
+            for d in row.get("denom_list", []):
+                if d.get("show_denom") == "100-50" and d.get("buy_rate_amount"):
+                    return float(d["buy_rate_amount"]), None
+    return None, None
+
+
 BOOTHS = [
     # (id matching catalog.json, display name, scraper or None, pending reason)
     ("vasu",           "Vasu Exchange",      scrape_vasu, None),
     ("k79",            "K79 Exchange",       scrape_k79,  None),
     ("superrich_th",   "SuperRich Thailand", scrape_superrich_th, None),
-    ("superrich_1965", "SuperRich 1965",     None, "rate API is WAF-blocked (403) to non-browser clients"),
+    ("superrich_1965", "SuperRich 1965",     scrape_sr1965, None),
     ("siam_exchange",  "Siam Exchange",      None, "site's own JS bundles 404 — no live rate source"),
 ]
 
