@@ -1,36 +1,35 @@
 {
   "version": 1,
-  "updated": "2026-06-10T09:07:39Z",
+  "updated": "2026-06-10T11:45:24Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
-      "ok": true,
-      "usd100Buy": 32.8,
-      "fetchedAt": "2026-06-10T09:07:39Z"
+      "ok": false,
+      "reason": "fetch failed: URLError"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
-      "usd100Buy": 32.66,
-      "fetchedAt": "2026-06-10T09:07:39Z",
-      "siteTime": "2026-06-10 15:30:19 +07:00 (site)"
+      "usd100Buy": 32.69,
+      "fetchedAt": "2026-06-10T11:45:24Z",
+      "siteTime": "2026-06-10 18:05:31 +07:00 (site)"
     },
     {
       "id": "superrich_th",
       "name": "SuperRich Thailand",
       "ok": true,
       "usd100Buy": 32.83,
-      "fetchedAt": "2026-06-10T09:07:39Z",
-      "siteTime": "2026-06-10T16:03:18.686Z"
+      "fetchedAt": "2026-06-10T11:45:24Z",
+      "siteTime": "2026-06-10T17:56:29.243Z"
     },
     {
       "id": "superrich_1965",
       "name": "SuperRich 1965",
       "ok": true,
-      "usd100Buy": 32.82,
-      "fetchedAt": "2026-06-10T09:07:39Z"
+      "usd100Buy": 32.76,
+      "fetchedAt": "2026-06-10T11:45:24Z"
     },
     {
       "id": "siam_exchange",
