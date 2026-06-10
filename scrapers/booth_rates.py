@@ -29,6 +29,27 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
 
 SANITY_LO, SANITY_HI = 25.0, 45.0   # plausible THB-per-USD window
 
+# Max age of a third-party (CashChanger) board reading we'll still publish.
+# A live booth refreshes its tourist currencies several times a day; matches the
+# app's 24h engine-freshness gate, so a borderline reading is never trusted twice.
+CC_MAX_AGE_HOURS = 24
+
+_AGE_UNITS = {"second": 1 / 3600, "minute": 1 / 60, "hour": 1,
+              "day": 24, "week": 168, "month": 730, "year": 8760}
+
+
+class RateUnavailable(Exception):
+    """Source reached but no fresh, trustworthy rate — list the booth without one
+    (an expected, handled state, not a scraper failure)."""
+
+
+def relative_age_hours(phrase: str) -> float:
+    """'2 hours ago' / 'just now' / '23 days ago' -> approximate hours (inf if unparseable)."""
+    if "just now" in phrase:
+        return 0.0
+    m = re.search(r"(\d+)\s*(second|minute|hour|day|week|month|year)s?\s*ago", phrase)
+    return int(m.group(1)) * _AGE_UNITS[m.group(2)] if m else float("inf")
+
 
 def fetch(url: str, timeout: int = 20, headers: dict | None = None,
           data: bytes | None = None, method: str | None = None) -> str:
@@ -117,13 +138,42 @@ def scrape_sr1965():
     return None, None
 
 
+def scrape_siam():
+    """Siam Exchange — their own website is dead (JS/CSS bundles 404, blank page),
+    but Siam is an active merchant on CashChanger, whose rates are *self-published*
+    by the changer (their merchant pitch is "set/update your rates"; they don't
+    scrape non-participants). So this board reading is effectively Siam's own posted
+    rate. We read the WE-BUY USD rate, but only when CashChanger's per-currency
+    timestamp is fresh (<24h) — otherwise refuse it; the app then lists Siam
+    location-only. Source is surfaced as `via CashChanger` for honesty.
+    """
+    html = fetch("https://cashchanger.co/thailand/mc/siam-exchange/286")
+    # Visible table renders WE BUY before WE SELL. Anchor on the last WE BUY header
+    # (skips the hidden/responsive copy), then the first 'USD 1 = THB <rate>' is the
+    # buy rate; the relative timestamp follows it immediately.
+    anchor = html.rfind("WE BUY")
+    region = html[anchor:] if anchor >= 0 else html
+    m = re.search(r"USD\s*1\s*=\s*THB\s*([\d.]+)", region)
+    if not m:
+        return None, None                                  # layout changed
+    rate = float(m.group(1))
+    if not (SANITY_LO < rate < SANITY_HI):
+        return None, None
+    age = re.search(r"(just now|\d+\s*(?:second|minute|hour|day|week|month|year)s?\s*ago)",
+                    region[m.end(): m.end() + 200])
+    phrase = age.group(1) if age else ""
+    if relative_age_hours(phrase) > CC_MAX_AGE_HOURS:
+        raise RateUnavailable(f"CashChanger board stale ({phrase or 'no timestamp'})")
+    return rate, (f"CashChanger board · {phrase}" if phrase else "via CashChanger")
+
+
 BOOTHS = [
-    # (id matching catalog.json, display name, scraper or None, pending reason)
-    ("vasu",           "Vasu Exchange",      scrape_vasu, None),
-    ("k79",            "K79 Exchange",       scrape_k79,  None),
-    ("superrich_th",   "SuperRich Thailand", scrape_superrich_th, None),
-    ("superrich_1965", "SuperRich 1965",     scrape_sr1965, None),
-    ("siam_exchange",  "Siam Exchange",      None, "site's own JS bundles 404 — no live rate source"),
+    # (id matching catalog.json, display name, scraper or None, pending reason, source label)
+    ("vasu",           "Vasu Exchange",      scrape_vasu,         None, None),
+    ("k79",            "K79 Exchange",       scrape_k79,          None, None),
+    ("superrich_th",   "SuperRich Thailand", scrape_superrich_th, None, None),
+    ("superrich_1965", "SuperRich 1965",     scrape_sr1965,       None, None),
+    ("siam_exchange",  "Siam Exchange",      scrape_siam,         None, "via CashChanger"),
 ]
 
 
@@ -131,7 +181,7 @@ def main() -> int:
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     rates, failures = [], 0
 
-    for booth_id, name, scraper, pending in BOOTHS:
+    for booth_id, name, scraper, pending, source in BOOTHS:
         entry = {"id": booth_id, "name": name, "ok": False}
         if scraper is None:
             entry["reason"] = pending
@@ -142,9 +192,13 @@ def main() -> int:
                     entry.update(ok=True, usd100Buy=rate, fetchedAt=now)
                     if site_ts:
                         entry["siteTime"] = site_ts
+                    if source:
+                        entry["source"] = source
                 else:
                     entry["reason"] = "marker/rate not found (site changed?)"
                     failures += 1
+            except RateUnavailable as exc:
+                entry["reason"] = str(exc)                 # handled, not a failure
             except Exception as exc:                       # noqa: BLE001
                 entry["reason"] = f"fetch failed: {type(exc).__name__}"
                 failures += 1
