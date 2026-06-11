@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "catalogUpdated": "2026-06-11T09:00Z",
+  "catalogUpdated": "2026-06-11T10:00Z",
   "booths": [
     { "id": "superrich_th", "name": "SuperRich Thailand", "quality": "best",
       "areas": "45 Soi Ratchadamri 1 HQ · counters at major BTS stops",
@@ -114,10 +114,10 @@
       "acceptance": "limited",
       "acceptanceNote": "Amex / Discover often rejected at Thai ATMs",
       "volatility": "low",
-      "notes": "Withdrawing cash with a credit card is a cash advance — most issuers charge a fee plus interest from day one, with no grace period.",
-      "interest": { "apr": 0.24, "accruesOnFees": true },
+      "notes": "Withdrawing cash with a credit card is a cash advance: most issuers charge 5% (min $10) plus ~30% APR from day one — no grace period. Modeled assuming you pay it off in 30 days; set your card's actual fee in Setup.",
+      "interest": { "apr": 0.2999, "accruesOnFees": true },
       "fees": [
-        { "kind": "pct_usd", "value": 0.04, "minUsd": 10, "source": "user", "profileKey": "ca_fee", "interestBase": true, "label": "Cash-advance fee" },
+        { "kind": "pct_usd", "value": 0.05, "minUsd": 10, "source": "user", "profileKey": "ca_fee", "interestBase": true, "label": "Cash-advance fee" },
         { "kind": "pct_usd", "value": 0.03, "source": "user", "profileKey": "bank_ftf", "label": "Foreign-txn fee" },
         { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
         { "kind": "rate_margin", "value": 0.05, "when": { "dccAccepted": true }, "source": "stored", "label": "DCC markup" }
