@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "catalogUpdated": "2026-06-11",
+  "catalogUpdated": "2026-06-11T07:00Z",
   "booths": [
     { "id": "superrich_th", "name": "SuperRich Thailand", "quality": "best",
       "areas": "45 Soi Ratchadamri 1 HQ · counters at major BTS stops",
@@ -42,6 +42,7 @@
       "id": "wise_card_atm",
       "label": "Wise card · ATM",
       "group": "cash_in_hand",      "rateSource": "mid_market",
+      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
       "amountCapThb": 20000,
       "freeAtmAmountThb": 4000,
       "freeAtmWithdrawals": 2,
@@ -58,6 +59,7 @@
       "id": "atm_debit",
       "label": "Debit card · ATM",
       "group": "cash_in_hand",      "rateSource": "mid_market",
+      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
       "amountCapThb": 20000,
       "acceptance": "wide",
       "volatility": "high",
@@ -70,12 +72,14 @@
     },
     {
       "id": "cc_advance",
-      "label": "Credit cash advance",
+      "label": "Credit card · ATM",
       "group": "cash_in_hand",      "rateSource": "mid_market",
+      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
       "amountCapThb": 20000,
       "acceptance": "limited",
       "acceptanceNote": "Amex / Discover often rejected at Thai ATMs",
       "volatility": "low",
+      "notes": "Withdrawing cash with a credit card is a cash advance — most issuers charge a fee plus interest from day one, with no grace period.",
       "interest": { "apr": 0.24, "accruesOnFees": true },
       "fees": [
         { "kind": "pct_usd", "value": 0.04, "minUsd": 10, "source": "user", "profileKey": "ca_fee", "interestBase": true, "label": "Cash-advance fee" },
