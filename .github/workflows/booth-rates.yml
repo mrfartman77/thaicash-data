@@ -2,8 +2,11 @@ name: booth-rates
 
 on:
   schedule:
-    # Every 2 hours, 02:07–12:07 UTC = 09:07–19:07 Bangkok (booth business hours)
-    - cron: "7 2-12/2 * * *"
+    # Hourly, 01:07–13:07 UTC = 08:07–20:07 Bangkok (booth business hours).
+    # Dense on purpose: GitHub fires schedule events 1.5–4h late on the shared
+    # queue, so more slots = the first morning scrape lands sooner and any
+    # load-shedded slot matters less.
+    - cron: "7 1-13 * * *"
   workflow_dispatch: {}
 
 permissions:
