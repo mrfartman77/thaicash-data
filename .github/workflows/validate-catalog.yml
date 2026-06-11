@@ -1,0 +1,32 @@
+name: validate-catalog
+
+# Every install of the app pulls catalog.json from raw.githubusercontent.com.
+# A bad push doesn't crash anyone — the app keeps its cache — but it silently
+# freezes remote updates for everyone. This check is the guard.
+on:
+  push:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # HEAD~1 needed for the catalogUpdated comparison
+
+      - name: Pull the previous catalog
+        run: |
+          git show HEAD~1:catalog.json > /tmp/catalog-prev.json 2>/dev/null \
+            || echo "no previous catalog (first commit or new file)"
+
+      - name: Validate catalog.json
+        run: |
+          if [ -s /tmp/catalog-prev.json ]; then
+            python3 scripts/validate_catalog.py catalog.json --previous /tmp/catalog-prev.json
+          else
+            python3 scripts/validate_catalog.py catalog.json
+          fi
