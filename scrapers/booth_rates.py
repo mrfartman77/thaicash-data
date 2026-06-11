@@ -27,7 +27,12 @@ from pathlib import Path
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
       "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15")
 
-SANITY_LO, SANITY_HI = 25.0, 45.0   # plausible THB-per-USD window
+SANITY_LO, SANITY_HI = 25.0, 45.0   # plausible THB-per-USD window (Siam/CashChanger USD check)
+
+# Corridor currencies and their plausible THB-per-unit windows. A board figure
+# outside its window is treated as not-found, never published.
+CURRENCIES = ("USD", "EUR", "AUD")
+SANITY = {"USD": (25.0, 45.0), "EUR": (28.0, 52.0), "AUD": (15.0, 30.0)}
 
 # Max age of a third-party (CashChanger) board reading we'll still publish.
 # A live booth refreshes its tourist currencies several times a day; matches the
@@ -64,31 +69,38 @@ def fetch_json(url: str, timeout: int = 20, headers: dict | None = None,
     return json.loads(fetch(url, timeout=timeout, headers=headers, data=data, method=method))
 
 
-def first_rate_after(html: str, marker: str, window: int = 400):
-    """First plausible THB-per-USD decimal following any occurrence of `marker`.
+def first_rate_after(html: str, marker: str, window: int = 400, cur: str = "USD"):
+    """First plausible THB-per-unit decimal following any occurrence of `marker`.
 
     Tries every occurrence: markers can also appear in image alts/nav items
-    with no rate nearby (K79 does this).
+    with no rate nearby (K79 does this). The first plausible figure after a
+    currency's marker is the buy rate (boards render buy before sell).
     """
+    lo, hi = SANITY[cur]
     for m in re.finditer(re.escape(marker), html):
         chunk = html[m.start(): m.start() + window]
         for r in re.finditer(r"(\d{2}\.\d{1,4})", chunk):
             v = float(r.group(1))
-            if SANITY_LO < v < SANITY_HI:
+            if lo < v < hi:
                 return v
     return None
 
 
+# Marker for each currency's board row on the marker-scan sites. USD uses the
+# big-note row label; EUR/AUD rows are found by code (sanity windows do the rest).
+MARKERS = {"USD": "USD 100", "EUR": "EUR", "AUD": "AUD"}
+
+
 def scrape_k79():
     html = fetch("https://www.k79exchange.com/")
-    rate = first_rate_after(html, "USD 100")
+    buy = {c: first_rate_after(html, MARKERS[c], cur=c) for c in CURRENCIES}
     ts = re.search(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", html)
-    return rate, (ts.group(0) + " +07:00 (site)" if ts else None)
+    return buy, (ts.group(0) + " +07:00 (site)" if ts else None)
 
 
 def scrape_vasu():
     html = fetch("https://www.vasuexchange.co.th/")
-    return first_rate_after(html, "USD 100"), None
+    return {c: first_rate_after(html, MARKERS[c], cur=c) for c in CURRENCIES}, None
 
 
 def scrape_superrich_th():
@@ -102,13 +114,20 @@ def scrape_superrich_th():
     auth = "Basic c3VwZXJyaWNoVGg6aFRoY2lycmVwdXM="
     doc = fetch_json("https://www.superrichthailand.com/api/v1/rates",
                      headers={"Authorization": auth, "Accept": "application/json"})
+    buy: dict = {}
+    site_ts = None
     for cur in doc.get("data", {}).get("exchangeRate", []):
-        if cur.get("cUnit") != "USD":
+        unit = cur.get("cUnit")
+        if unit not in CURRENCIES:
             continue
-        for row in cur.get("rate", []):
-            if str(row.get("denom")) == "100" and row.get("cBuying") is not None:
-                return float(row["cBuying"]), row.get("dateTime")
-    return None, None
+        lo, hi = SANITY[unit]
+        # Best (large-note) buy across denominations = the headline board rate.
+        vals = [float(r["cBuying"]) for r in cur.get("rate", [])
+                if r.get("cBuying") is not None and lo < float(r["cBuying"]) < hi]
+        if vals:
+            buy[unit] = max(vals)
+            site_ts = site_ts or (cur.get("rate") or [{}])[0].get("dateTime")
+    return buy, site_ts
 
 
 def scrape_sr1965():
@@ -130,12 +149,17 @@ def scrape_sr1965():
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json",
                  "Referer": "https://www.superrich1965.com/"},
         data=body, method="POST")
+    buy: dict = {}
     for row in doc.get("data", {}).get("datas", []):
-        if row.get("currency_code") == "USD":
-            for d in row.get("denom_list", []):
-                if d.get("show_denom") == "100-50" and d.get("buy_rate_amount"):
-                    return float(d["buy_rate_amount"]), None
-    return None, None
+        unit = row.get("currency_code")
+        if unit not in CURRENCIES:
+            continue
+        lo, hi = SANITY[unit]
+        vals = [float(d["buy_rate_amount"]) for d in row.get("denom_list", [])
+                if d.get("buy_rate_amount") and lo < float(d["buy_rate_amount"]) < hi]
+        if vals:
+            buy[unit] = max(vals)   # large-note denom carries the best board rate
+    return buy, None
 
 
 def scrape_siam():
@@ -164,7 +188,14 @@ def scrape_siam():
     phrase = age.group(1) if age else ""
     if relative_age_hours(phrase) > CC_MAX_AGE_HOURS:
         raise RateUnavailable(f"CashChanger board stale ({phrase or 'no timestamp'})")
-    return rate, (f"CashChanger board · {phrase}" if phrase else "via CashChanger")
+    buy = {"USD": rate}
+    # Siam's CashChanger board may also list EUR/AUD rows; absent rows just skip.
+    for cur in ("EUR", "AUD"):
+        lo, hi = SANITY[cur]
+        mc = re.search(cur + r"\s*1\s*=\s*THB\s*([\d.]+)", region)
+        if mc and lo < float(mc.group(1)) < hi:
+            buy[cur] = float(mc.group(1))
+    return buy, (f"CashChanger board · {phrase}" if phrase else "via CashChanger")
 
 
 BOOTHS = [
@@ -187,9 +218,10 @@ def main() -> int:
             entry["reason"] = pending
         else:
             try:
-                rate, site_ts = scraper()
-                if rate is not None:
-                    entry.update(ok=True, usd100Buy=rate, fetchedAt=now)
+                buy, site_ts = scraper()
+                buy = {k: v for k, v in (buy or {}).items() if v is not None}
+                if buy.get("USD"):                          # USD row is the health check
+                    entry.update(ok=True, buy=buy, fetchedAt=now)
                     if site_ts:
                         entry["siteTime"] = site_ts
                     if source:
@@ -204,7 +236,7 @@ def main() -> int:
                 failures += 1
         rates.append(entry)
 
-    out = {"version": 1, "updated": now, "rates": rates}
+    out = {"version": 2, "updated": now, "rates": rates}
     out_path = Path(__file__).resolve().parent.parent / "data" / "booth-rates.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(out, indent=2) + "\n")
@@ -212,7 +244,7 @@ def main() -> int:
     live = [r for r in rates if r["ok"]]
     print(f"wrote {out_path} — {len(live)} live, {failures} failures")
     for r in live:
-        print(f"  {r['name']}: {r['usd100Buy']}")
+        print(f"  {r['name']}: {r['buy']}")
     # Exit 0 even with partial failures (stale entries are handled app-side);
     # exit 1 only if NOTHING scraped, so the Action flags total breakage.
     return 0 if live else 1
