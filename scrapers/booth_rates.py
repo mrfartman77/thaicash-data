@@ -31,8 +31,8 @@ SANITY_LO, SANITY_HI = 25.0, 45.0   # plausible THB-per-USD window (Siam/CashCha
 
 # Corridor currencies and their plausible THB-per-unit windows. A board figure
 # outside its window is treated as not-found, never published.
-CURRENCIES = ("USD", "EUR", "AUD")
-SANITY = {"USD": (25.0, 45.0), "EUR": (28.0, 52.0), "AUD": (15.0, 30.0)}
+CURRENCIES = ("USD", "EUR", "AUD", "CNY")
+SANITY = {"USD": (25.0, 45.0), "EUR": (28.0, 52.0), "AUD": (15.0, 30.0), "CNY": (3.5, 5.2)}
 
 # Max age of a third-party (CashChanger) board reading we'll still publish.
 # A live booth refreshes its tourist currencies several times a day; matches the
@@ -79,7 +79,7 @@ def first_rate_after(html: str, marker: str, window: int = 400, cur: str = "USD"
     lo, hi = SANITY[cur]
     for m in re.finditer(re.escape(marker), html):
         chunk = html[m.start(): m.start() + window]
-        for r in re.finditer(r"(\d{2}\.\d{1,4})", chunk):
+        for r in re.finditer(r"(\d{1,2}\.\d{1,4})", chunk):
             v = float(r.group(1))
             if lo < v < hi:
                 return v
@@ -88,7 +88,7 @@ def first_rate_after(html: str, marker: str, window: int = 400, cur: str = "USD"
 
 # Marker for each currency's board row on the marker-scan sites. USD uses the
 # big-note row label; EUR/AUD rows are found by code (sanity windows do the rest).
-MARKERS = {"USD": "USD 100", "EUR": "EUR", "AUD": "AUD"}
+MARKERS = {"USD": "USD 100", "EUR": "EUR", "AUD": "AUD", "CNY": "CNY"}
 
 
 def scrape_k79():
@@ -189,12 +189,18 @@ def scrape_siam():
     if relative_age_hours(phrase) > CC_MAX_AGE_HOURS:
         raise RateUnavailable(f"CashChanger board stale ({phrase or 'no timestamp'})")
     buy = {"USD": rate}
-    # Siam's CashChanger board may also list EUR/AUD rows; absent rows just skip.
-    for cur in ("EUR", "AUD"):
+    # Other currency rows carry their own CashChanger timestamps and can be
+    # months staler than the USD row (Siam's CNY was) — gate each one.
+    for cur in ("EUR", "AUD", "CNY"):
         lo, hi = SANITY[cur]
         mc = re.search(cur + r"\s*1\s*=\s*THB\s*([\d.]+)", region)
-        if mc and lo < float(mc.group(1)) < hi:
-            buy[cur] = float(mc.group(1))
+        if not (mc and lo < float(mc.group(1)) < hi):
+            continue
+        row_age = re.search(r"(just now|\d+\s*(?:second|minute|hour|day|week|month|year)s?\s*ago)",
+                            region[mc.end(): mc.end() + 200])
+        if not row_age or relative_age_hours(row_age.group(1)) > CC_MAX_AGE_HOURS:
+            continue                                   # stale or undated row
+        buy[cur] = float(mc.group(1))
     return buy, (f"CashChanger board · {phrase}" if phrase else "via CashChanger")
 
 
