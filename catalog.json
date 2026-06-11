@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "catalogUpdated": "2026-06-11T07:00Z",
+  "catalogUpdated": "2026-06-11T09:00Z",
   "booths": [
     { "id": "superrich_th", "name": "SuperRich Thailand", "quality": "best",
       "areas": "45 Soi Ratchadamri 1 HQ · counters at major BTS stops",
@@ -39,27 +39,61 @@
       "fees": []
     },
     {
+      "id": "schwab_debit_atm",
+      "label": "Schwab debit · ATM",
+      "group": "cash_in_hand",      "rateSource": "mid_market_margin",
+      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
+      "fxMarginPct": 0.003,
+      "amountCapThb": 20000,
+      "acceptance": "wide",
+      "volatility": "low",
+      "notes": "Schwab Investor Checking: no foreign-transaction fee, and every ATM fee — including the Thai ฿220 — is rebated at month-end. You get Visa's wholesale rate, on average ~0.3% off mid. Needs the free brokerage + checking account opened before your trip.",
+      "fees": []
+    },
+    {
       "id": "wise_card_atm",
       "label": "Wise card · ATM",
       "group": "cash_in_hand",      "rateSource": "mid_market",
       "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
       "amountCapThb": 20000,
-      "freeAtmAmountThb": 4000,
-      "freeAtmWithdrawals": 2,
+      "freeAtmAmountThb": 8200,
       "acceptance": "wide",
       "volatility": "medium",
+      "notes": "Wise's published US schedule: 0.57% USD→THB conversion, $250/month of fee-free ATM withdrawals, then $1.95 + 1.95% per withdrawal.",
       "fees": [
-        { "kind": "pct_usd", "value": 0.0045, "source": "stored", "label": "Wise FX fee" },
+        { "kind": "pct_usd", "value": 0.0057, "source": "stored", "label": "Wise FX fee" },
         { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
-        { "kind": "flat_usd", "value": 0.50, "per": "withdrawal", "when": { "overFreeAtm": true }, "source": "stored", "label": "Wise ATM fixed fee" },
-        { "kind": "pct_usd", "value": 0.0175, "feeOn": "over_allowance", "when": { "overFreeAtm": true }, "source": "stored", "label": "Wise ATM over-allowance" }
+        { "kind": "flat_usd", "value": 1.95, "per": "withdrawal", "when": { "overFreeAtm": true }, "source": "stored", "label": "Wise ATM fixed fee" },
+        { "kind": "pct_usd", "value": 0.0195, "feeOn": "over_allowance", "when": { "overFreeAtm": true }, "source": "stored", "label": "Wise ATM over-allowance" }
+      ]
+    },
+    {
+      "id": "revolut_card_atm",
+      "label": "Revolut card · ATM",
+      "group": "cash_in_hand",      "rateSource": "mid_market",
+      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
+      "amountCapThb": 20000,
+      "freeAtmAmountThb": 33000,
+      "acceptance": "wide",
+      "volatility": "medium",
+      "notes": "Revolut US Standard: 2% fee on every out-of-network ATM withdrawal (all Thai ATMs are). Exchanging over $1,000/month adds a 0.5% fair-usage fee, and converting outside market hours (Fri 5pm–Sun 6pm ET) adds 1% — convert before the weekend.",
+      "fees": [
+        { "kind": "pct_usd", "value": 0.02, "source": "stored", "label": "Out-of-network ATM fee" },
+        { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
+        { "kind": "pct_usd", "value": 0.005, "feeOn": "over_allowance", "when": { "overFreeAtm": true }, "source": "stored", "label": "FX fair-usage over $1k/mo" },
+        { "kind": "rate_margin", "value": 0.01, "when": { "isWeekend": true }, "source": "stored", "label": "Out-of-hours exchange markup" }
       ]
     },
     {
       "id": "atm_debit",
-      "label": "Debit card · ATM",
+      "label": "Your debit card · ATM",
       "group": "cash_in_hand",      "rateSource": "mid_market",
       "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
+      "notes": "Modeled on your own bank's fees — set your foreign-transaction fee and ATM fee in Setup to make this exact.",
       "amountCapThb": 20000,
       "acceptance": "wide",
       "volatility": "high",
@@ -72,9 +106,10 @@
     },
     {
       "id": "cc_advance",
-      "label": "Credit card · ATM",
+      "label": "Your credit card · ATM",
       "group": "cash_in_hand",      "rateSource": "mid_market",
       "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
       "amountCapThb": 20000,
       "acceptance": "limited",
       "acceptanceNote": "Amex / Discover often rejected at Thai ATMs",
