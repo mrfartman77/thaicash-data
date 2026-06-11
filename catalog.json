@@ -1,55 +1,99 @@
 {
   "schemaVersion": 3,
-  "catalogUpdated": "2026-06-11T15:00Z",
+  "catalogUpdated": "2026-06-11T16:00Z",
   "directories": {
     "atm_cash": {
       "title": "Find an ATM",
       "footer": "The machine's fee stacks on your card's costs — the ranking above models ฿220. Whatever the machine, always decline the on-screen USD conversion (DCC).",
       "entries": [
-        { "id": "aeon", "name": "AEON", "feeThb": 150,
+        {
+          "id": "aeon",
+          "name": "AEON",
+          "feeThb": 150,
           "areas": "Big C · AEON malls · MaxValu",
           "note": "Cheapest machine fee in Thailand. Dispenses up to ฿20,000 a pull. Maps opens their Exchange Tower flagship (BTS Asok).",
           "mapsQuery": "AEON Thana Sinsap 388 Sukhumvit Road Bangkok",
-          "mapsPlaceId": "IBEFD12DD40BE93D4", "mapsNear": "13.7563,100.5018" },
-        { "id": "krungsri", "name": "Krungsri (yellow)", "feeThb": 220,
+          "mapsPlaceId": "IBEFD12DD40BE93D4",
+          "mapsNear": "13.7563,100.5018"
+        },
+        {
+          "id": "krungsri",
+          "name": "Krungsri (yellow)",
+          "feeThb": 220,
           "areas": "Yellow machines · branches everywhere",
           "note": "Dispenses up to ฿30,000 a pull — fewer fees on big withdrawals.",
-          "mapsQuery": "Krungsri ATM", "mapsNear": "13.7563,100.5018" },
-        { "id": "bangkok_bank", "name": "Bangkok Bank (blue)", "feeThb": 220,
+          "mapsQuery": "Krungsri ATM",
+          "mapsNear": "13.7563,100.5018"
+        },
+        {
+          "id": "bangkok_bank",
+          "name": "Bangkok Bank (blue)",
+          "feeThb": 220,
           "areas": "Blue machines · branches everywhere",
           "note": "Up to ฿25,000 a pull. Maps opens the Silom head office.",
           "mapsQuery": "Bangkok Bank 333 Silom Road Bangkok",
-          "mapsPlaceId": "IE739F4D148907E13", "mapsNear": "13.7563,100.5018" },
-        { "id": "kasikorn", "name": "Kasikorn (green)", "feeThb": 250,
+          "mapsPlaceId": "IE739F4D148907E13",
+          "mapsNear": "13.7563,100.5018"
+        },
+        {
+          "id": "kasikorn",
+          "name": "Kasikorn (green)",
+          "feeThb": 250,
           "areas": "Green machines · branches everywhere",
           "note": "Raised its foreign-card fee to ฿250 in 2025.",
-          "mapsQuery": "Kasikorn Bank ATM", "mapsNear": "13.7563,100.5018" }
+          "mapsQuery": "Kasikorn Bank ATM",
+          "mapsNear": "13.7563,100.5018"
+        }
       ]
     }
   },
   "booths": [
-    { "id": "superrich_th", "name": "SuperRich Thailand", "quality": "best",
+    {
+      "id": "superrich_th",
+      "name": "SuperRich Thailand",
+      "quality": "best",
       "areas": "45 Soi Ratchadamri 1 HQ · counters at major BTS stops",
       "note": "The benchmark board. Big, clean $100 notes get the top rate.",
       "mapsQuery": "Superrich Thailand 45 Soi Ratchadamri 1 Bangkok",
-      "mapsPlaceId": "IE4920E89755E16FA" },
-    { "id": "superrich_1965", "name": "SuperRich 1965", "quality": "best",
+      "mapsPlaceId": "IE4920E89755E16FA"
+    },
+    {
+      "id": "superrich_1965",
+      "name": "SuperRich 1965",
+      "quality": "best",
       "areas": "67-69 Ratchadamri Soi 2 · Silom",
       "mapsQuery": "Super Rich 1965 67-69 Ratchadamri Soi 2 Bangkok",
-      "mapsPlaceId": "I6CC073A462A30F17" },
-    { "id": "vasu", "name": "Vasu Exchange", "quality": "best",
+      "mapsPlaceId": "I6CC073A462A30F17"
+    },
+    {
+      "id": "vasu",
+      "name": "Vasu Exchange",
+      "quality": "best",
       "areas": "133 Sukhumvit Rd · BTS Nana",
       "mapsQuery": "Vasu Exchange 133 Sukhumvit Road Bangkok",
-      "mapsPlaceId": "I2CA0D46D648E97D3" },
-    { "id": "siam_exchange", "name": "Siam Exchange", "quality": "good",
+      "mapsPlaceId": "I2CA0D46D648E97D3"
+    },
+    {
+      "id": "siam_exchange",
+      "name": "Siam Exchange",
+      "quality": "good",
       "areas": "422/3 Phaya Thai Rd · BTS National Stadium",
-      "mapsQuery": "Siam Exchange 422/3 Phaya Thai Road Pathum Wan Bangkok" },
-    { "id": "k79", "name": "K79 Exchange", "quality": "good",
+      "mapsQuery": "Siam Exchange 422/3 Phaya Thai Road Pathum Wan Bangkok"
+    },
+    {
+      "id": "k79",
+      "name": "K79 Exchange",
+      "quality": "good",
       "areas": "2063 Sukhumvit Rd · BTS On Nut",
-      "mapsQuery": "K79 Money Exchange 2063 Sukhumvit Road On Nut Bangkok" },
-    { "id": "airport_bank", "name": "Airport & bank counters", "quality": "avoid",
+      "mapsQuery": "K79 Money Exchange 2063 Sukhumvit Road On Nut Bangkok"
+    },
+    {
+      "id": "airport_bank",
+      "name": "Airport & bank counters",
+      "quality": "avoid",
       "areas": "Everywhere convenient",
-      "note": "Convenience is priced in — typically 1.5–3% worse than the chains above." }
+      "note": "Convenience is priced in — typically 1.5–3% worse than the chains above."
+    }
   ],
   "atmHostFeeThb": 220,
   "atmCapThb": 20000,
@@ -57,7 +101,8 @@
     {
       "id": "booth",
       "label": "Exchange booth",
-      "group": "cash_in_hand",      "rateSource": "quoted",
+      "group": "cash_in_hand",
+      "rateSource": "quoted",
       "typicalBoothMargin": 0.005,
       "acceptance": "wide",
       "volatility": "low",
@@ -67,21 +112,26 @@
     {
       "id": "schwab_debit_atm",
       "label": "Schwab debit · ATM",
-      "group": "cash_in_hand",      "rateSource": "mid_market_margin",
-      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "group": "cash_in_hand",
+      "rateSource": "mid_market_margin",
+      "subgroup": "atm_cash",
+      "subgroupLabel": "ATM withdrawal",
       "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
       "fxMarginPct": 0.003,
       "amountCapThb": 20000,
       "acceptance": "wide",
       "volatility": "low",
       "notes": "Schwab Investor Checking: no foreign-transaction fee, and every ATM fee — including the Thai ฿220 — is rebated at month-end. You get Visa's wholesale rate, on average ~0.3% off mid. Needs the free brokerage + checking account opened before your trip.",
-      "fees": []
+      "fees": [],
+      "linkURL": "https://www.schwab.com/checking"
     },
     {
       "id": "wise_card_atm",
       "label": "Wise card · ATM",
-      "group": "cash_in_hand",      "rateSource": "mid_market",
-      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "group": "cash_in_hand",
+      "rateSource": "mid_market",
+      "subgroup": "atm_cash",
+      "subgroupLabel": "ATM withdrawal",
       "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
       "amountCapThb": 20000,
       "freeAtmAmountThb": 8200,
@@ -89,17 +139,49 @@
       "volatility": "medium",
       "notes": "Wise's published US schedule: 0.57% USD→THB conversion, $250/month of fee-free ATM withdrawals, then $1.95 + 1.95% per withdrawal.",
       "fees": [
-        { "kind": "pct_usd", "value": 0.0057, "source": "stored", "label": "Wise FX fee" },
-        { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
-        { "kind": "flat_usd", "value": 1.95, "per": "withdrawal", "when": { "overFreeAtm": true }, "source": "stored", "label": "Wise ATM fixed fee" },
-        { "kind": "pct_usd", "value": 0.0195, "feeOn": "over_allowance", "when": { "overFreeAtm": true }, "source": "stored", "label": "Wise ATM over-allowance" }
-      ]
+        {
+          "kind": "pct_usd",
+          "value": 0.0057,
+          "source": "stored",
+          "label": "Wise FX fee"
+        },
+        {
+          "kind": "flat_thb",
+          "value": 220,
+          "per": "withdrawal",
+          "source": "stored",
+          "label": "Thai ATM fee"
+        },
+        {
+          "kind": "flat_usd",
+          "value": 1.95,
+          "per": "withdrawal",
+          "when": {
+            "overFreeAtm": true
+          },
+          "source": "stored",
+          "label": "Wise ATM fixed fee"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.0195,
+          "feeOn": "over_allowance",
+          "when": {
+            "overFreeAtm": true
+          },
+          "source": "stored",
+          "label": "Wise ATM over-allowance"
+        }
+      ],
+      "linkURL": "https://wise.com/us/card/"
     },
     {
       "id": "revolut_card_atm",
       "label": "Revolut card · ATM",
-      "group": "cash_in_hand",      "rateSource": "mid_market",
-      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "group": "cash_in_hand",
+      "rateSource": "mid_market",
+      "subgroup": "atm_cash",
+      "subgroupLabel": "ATM withdrawal",
       "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
       "amountCapThb": 20000,
       "freeAtmAmountThb": 33000,
@@ -107,107 +189,266 @@
       "volatility": "medium",
       "notes": "Revolut US Standard: 2% fee on every out-of-network ATM withdrawal (all Thai ATMs are). Exchanging over $1,000/month adds a 0.5% fair-usage fee, and converting outside market hours (Fri 5pm–Sun 6pm ET) adds 1% — convert before the weekend.",
       "fees": [
-        { "kind": "pct_usd", "value": 0.02, "source": "stored", "label": "Out-of-network ATM fee" },
-        { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
-        { "kind": "pct_usd", "value": 0.005, "feeOn": "over_allowance", "when": { "overFreeAtm": true }, "source": "stored", "label": "FX fair-usage over $1k/mo" },
-        { "kind": "rate_margin", "value": 0.01, "when": { "isWeekend": true }, "source": "stored", "label": "Out-of-hours exchange markup" }
-      ]
+        {
+          "kind": "pct_usd",
+          "value": 0.02,
+          "source": "stored",
+          "label": "Out-of-network ATM fee"
+        },
+        {
+          "kind": "flat_thb",
+          "value": 220,
+          "per": "withdrawal",
+          "source": "stored",
+          "label": "Thai ATM fee"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.005,
+          "feeOn": "over_allowance",
+          "when": {
+            "overFreeAtm": true
+          },
+          "source": "stored",
+          "label": "FX fair-usage over $1k/mo"
+        },
+        {
+          "kind": "rate_margin",
+          "value": 0.01,
+          "when": {
+            "isWeekend": true
+          },
+          "source": "stored",
+          "label": "Out-of-hours exchange markup"
+        }
+      ],
+      "linkURL": "https://www.revolut.com/en-US/"
     },
     {
       "id": "atm_debit",
       "label": "Your debit card · ATM",
-      "group": "cash_in_hand",      "rateSource": "mid_market",
-      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "group": "cash_in_hand",
+      "rateSource": "mid_market",
+      "subgroup": "atm_cash",
+      "subgroupLabel": "ATM withdrawal",
       "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
       "notes": "Modeled on your own bank's fees — set your foreign-transaction fee and ATM fee in Setup to make this exact.",
       "amountCapThb": 20000,
       "acceptance": "wide",
       "volatility": "high",
       "fees": [
-        { "kind": "pct_usd", "value": 0.03, "source": "user", "profileKey": "bank_ftf", "label": "Foreign-txn fee" },
-        { "kind": "flat_usd", "value": 5, "per": "withdrawal", "source": "user", "profileKey": "bank_atm_fee", "label": "Your bank's ATM fee" },
-        { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
-        { "kind": "rate_margin", "value": 0.05, "when": { "dccAccepted": true }, "source": "stored", "label": "DCC markup" }
+        {
+          "kind": "pct_usd",
+          "value": 0.03,
+          "source": "user",
+          "profileKey": "bank_ftf",
+          "label": "Foreign-txn fee"
+        },
+        {
+          "kind": "flat_usd",
+          "value": 5,
+          "per": "withdrawal",
+          "source": "user",
+          "profileKey": "bank_atm_fee",
+          "label": "Your bank's ATM fee"
+        },
+        {
+          "kind": "flat_thb",
+          "value": 220,
+          "per": "withdrawal",
+          "source": "stored",
+          "label": "Thai ATM fee"
+        },
+        {
+          "kind": "rate_margin",
+          "value": 0.05,
+          "when": {
+            "dccAccepted": true
+          },
+          "source": "stored",
+          "label": "DCC markup"
+        }
       ]
     },
     {
       "id": "cc_advance",
       "label": "Your credit card · ATM",
-      "group": "cash_in_hand",      "rateSource": "mid_market",
-      "subgroup": "atm_cash",       "subgroupLabel": "ATM withdrawal",
+      "group": "cash_in_hand",
+      "rateSource": "mid_market",
+      "subgroup": "atm_cash",
+      "subgroupLabel": "ATM withdrawal",
       "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
       "amountCapThb": 20000,
       "acceptance": "limited",
       "acceptanceNote": "Amex / Discover often rejected at Thai ATMs",
       "volatility": "low",
       "notes": "Withdrawing cash with a credit card is a cash advance: most issuers charge 5% (min $10) plus ~30% APR from day one — no grace period. Modeled assuming you pay it off in 30 days; set your card's actual fee in Setup.",
-      "interest": { "apr": 0.2999, "accruesOnFees": true },
+      "interest": {
+        "apr": 0.2999,
+        "accruesOnFees": true
+      },
       "fees": [
-        { "kind": "pct_usd", "value": 0.05, "minUsd": 10, "source": "user", "profileKey": "ca_fee", "interestBase": true, "label": "Cash-advance fee" },
-        { "kind": "pct_usd", "value": 0.03, "source": "user", "profileKey": "bank_ftf", "label": "Foreign-txn fee" },
-        { "kind": "flat_thb", "value": 220, "per": "withdrawal", "source": "stored", "label": "Thai ATM fee" },
-        { "kind": "rate_margin", "value": 0.05, "when": { "dccAccepted": true }, "source": "stored", "label": "DCC markup" }
+        {
+          "kind": "pct_usd",
+          "value": 0.05,
+          "minUsd": 10,
+          "source": "user",
+          "profileKey": "ca_fee",
+          "interestBase": true,
+          "label": "Cash-advance fee"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.03,
+          "source": "user",
+          "profileKey": "bank_ftf",
+          "label": "Foreign-txn fee"
+        },
+        {
+          "kind": "flat_thb",
+          "value": 220,
+          "per": "withdrawal",
+          "source": "stored",
+          "label": "Thai ATM fee"
+        },
+        {
+          "kind": "rate_margin",
+          "value": 0.05,
+          "when": {
+            "dccAccepted": true
+          },
+          "source": "stored",
+          "label": "DCC markup"
+        }
       ]
     },
     {
       "id": "wise_transfer_bank",
       "label": "Wise",
-      "group": "thb_in_bank",      "rateSource": "mid_market",
+      "group": "thb_in_bank",
+      "rateSource": "mid_market",
       "taxFlag": "thai_remittance_180d",
       "volatility": "medium",
       "notes": "Converts at the mid-market rate; the cost is the upfront fee (~0.45% + $0.80, ACH-funded). Debit funding adds 1%, credit 3%. Rate verified against a live comparison 2026-06-11.",
       "fees": [
-        { "kind": "flat_usd", "value": 0.80, "source": "stored", "label": "Fixed fee" },
-        { "kind": "pct_usd", "value": 0.0045, "feeOn": "send", "source": "stored", "label": "Variable fee" },
-        { "kind": "pct_usd", "value": 0.0, "when": { "fundingSource": "bank_ach" }, "source": "stored", "label": "ACH funding" },
-        { "kind": "pct_usd", "value": 0.01, "when": { "fundingSource": "debit_card" }, "source": "stored", "label": "Debit-card funding" },
-        { "kind": "pct_usd", "value": 0.03, "when": { "fundingSource": "credit_card" }, "source": "stored", "label": "Credit-card funding" }
-      ]
+        {
+          "kind": "flat_usd",
+          "value": 0.8,
+          "source": "stored",
+          "label": "Fixed fee"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.0045,
+          "feeOn": "send",
+          "source": "stored",
+          "label": "Variable fee"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.0,
+          "when": {
+            "fundingSource": "bank_ach"
+          },
+          "source": "stored",
+          "label": "ACH funding"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.01,
+          "when": {
+            "fundingSource": "debit_card"
+          },
+          "source": "stored",
+          "label": "Debit-card funding"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.03,
+          "when": {
+            "fundingSource": "credit_card"
+          },
+          "source": "stored",
+          "label": "Credit-card funding"
+        }
+      ],
+      "linkURL": "https://wise.com"
     },
     {
       "id": "remitly_transfer_bank",
       "label": "Remitly",
-      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
+      "group": "thb_in_bank",
+      "rateSource": "mid_market_margin",
       "fxMarginPct": 0.005,
       "taxFlag": "thai_remittance_180d",
       "volatility": "medium",
       "notes": "Economy bank deposit, no fee at this size. The margin moves with promotions — measured ~0.4% on 2026-06-11; express speed or card funding costs more.",
-      "fees": []
+      "fees": [],
+      "linkURL": "https://www.remitly.com"
     },
     {
       "id": "revolut_transfer_bank",
       "label": "Revolut",
-      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
+      "group": "thb_in_bank",
+      "rateSource": "mid_market_margin",
       "fxMarginPct": 0.005,
       "freeAtmAmountThb": 33000,
       "taxFlag": "thai_remittance_180d",
       "volatility": "medium",
       "notes": "Revolut US: 0.15% transfer fee (min $0.75). Their THB rate carried a ~0.5% spread when measured 2026-06-11 (majors are tighter). Exchanging over $1,000/month adds 0.5%, and converting outside market hours (Fri 5pm–Sun 6pm ET) adds 1%.",
       "fees": [
-        { "kind": "pct_usd", "value": 0.0015, "minUsd": 0.75, "source": "stored", "label": "Transfer fee" },
-        { "kind": "pct_usd", "value": 0.005, "feeOn": "over_allowance", "when": { "overFreeAtm": true }, "source": "stored", "label": "FX fair-usage over $1k/mo" },
-        { "kind": "rate_margin", "value": 0.01, "when": { "isWeekend": true }, "source": "stored", "label": "Out-of-hours exchange markup" }
-      ]
+        {
+          "kind": "pct_usd",
+          "value": 0.0015,
+          "minUsd": 0.75,
+          "source": "stored",
+          "label": "Transfer fee"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.005,
+          "feeOn": "over_allowance",
+          "when": {
+            "overFreeAtm": true
+          },
+          "source": "stored",
+          "label": "FX fair-usage over $1k/mo"
+        },
+        {
+          "kind": "rate_margin",
+          "value": 0.01,
+          "when": {
+            "isWeekend": true
+          },
+          "source": "stored",
+          "label": "Out-of-hours exchange markup"
+        }
+      ],
+      "linkURL": "https://www.revolut.com/en-US/"
     },
     {
       "id": "xe_transfer_bank",
       "label": "Xe",
-      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
-      "fxMarginPct": 0.010,
+      "group": "thb_in_bank",
+      "rateSource": "mid_market_margin",
+      "fxMarginPct": 0.01,
       "taxFlag": "thai_remittance_180d",
       "volatility": "medium",
       "notes": "No transfer fee over $500 ($3 under). The cost is the rate margin — measured ~1.0% USD→THB on 2026-06-11; Xe's markup varies 0.5–2%.",
-      "fees": []
+      "fees": [],
+      "linkURL": "https://www.xe.com/send-money/"
     },
     {
       "id": "ofx_transfer_bank",
       "label": "OFX",
-      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
+      "group": "thb_in_bank",
+      "rateSource": "mid_market_margin",
       "fxMarginPct": 0.015,
       "taxFlag": "thai_remittance_180d",
       "volatility": "medium",
       "notes": "No transfer fee, $150 minimum. Retail margin typically 1–2% on exotics and improves a lot on large transfers — built for big moves; get their live quote above ~$10k.",
-      "fees": []
+      "fees": [],
+      "linkURL": "https://www.ofx.com/en-us/"
     }
   ]
 }
