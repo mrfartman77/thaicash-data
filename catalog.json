@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 3,
-  "catalogUpdated": "2026-06-11T16:00Z",
+  "schemaVersion": 4,
+  "catalogUpdated": "2026-06-11T17:00Z",
   "directories": {
     "atm_cash": {
       "title": "Find an ATM",
@@ -449,6 +449,99 @@
       "notes": "No transfer fee, $150 minimum. Retail margin typically 1–2% on exotics and improves a lot on large transfers — built for big moves; get their live quote above ~$10k.",
       "fees": [],
       "linkURL": "https://www.ofx.com/en-us/"
+    },
+    {
+      "id": "binance_th_usdt",
+      "label": "Binance TH",
+      "group": "crypto_thb_bank",
+      "rateSource": "mid_market",
+      "acceptance": "limited",
+      "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
+      "volatility": "medium",
+      "notes": "Sell USDT/THB, withdraw to your Thai bank. 0.25% THB-pair fee (VAT included) + ฿20 withdrawal, verified on binance.th 2026-06-11. Assumes you already hold USDT (~$1 network fee to deposit via TRON). All three licensed venues charge the same — the live USDT/THB book price is the real difference, so check the pair before selling. Capital gains via licensed Thai exchanges are income-tax-exempt 2025–2029.",
+      "linkURL": "https://www.binance.th/en/trade/USDT_THB",
+      "fees": [
+        {
+          "kind": "flat_usd",
+          "value": 1.0,
+          "source": "stored",
+          "label": "USDT network fee (TRON)"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.0025,
+          "source": "stored",
+          "label": "Trading fee 0.25%"
+        },
+        {
+          "kind": "flat_thb",
+          "value": 20,
+          "source": "stored",
+          "label": "THB withdrawal fee"
+        }
+      ]
+    },
+    {
+      "id": "bitkub_usdt",
+      "label": "Bitkub",
+      "group": "crypto_thb_bank",
+      "rateSource": "mid_market",
+      "acceptance": "limited",
+      "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
+      "volatility": "medium",
+      "notes": "Thailand's biggest THB order book. 0.25% trading fee + ฿20 withdrawal, verified on bitkub.com 2026-06-11. Assumes you already hold USDT (~$1 network fee via TRON). Fees match the other licensed venues — compare the live USDT/THB price instead. Capital gains via licensed Thai exchanges are income-tax-exempt 2025–2029.",
+      "linkURL": "https://www.bitkub.com/en/market/USDT_THB",
+      "fees": [
+        {
+          "kind": "flat_usd",
+          "value": 1.0,
+          "source": "stored",
+          "label": "USDT network fee (TRON)"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.0025,
+          "source": "stored",
+          "label": "Trading fee 0.25%"
+        },
+        {
+          "kind": "flat_thb",
+          "value": 20,
+          "source": "stored",
+          "label": "THB withdrawal fee"
+        }
+      ]
+    },
+    {
+      "id": "bitazza_usdt",
+      "label": "Bitazza",
+      "group": "crypto_thb_bank",
+      "rateSource": "mid_market",
+      "acceptance": "limited",
+      "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
+      "volatility": "medium",
+      "notes": "0.25% trading fee + ฿20 withdrawal (0.001% above ฿2M), verified on bitazza.co.th 2026-06-11. Assumes you already hold USDT (~$1 network fee via TRON). Fees match the other licensed venues — the live USDT/THB book price decides. Capital gains via licensed Thai exchanges are income-tax-exempt 2025–2029.",
+      "linkURL": "https://trade.bitazza.co.th/spot/USDTTHB",
+      "fees": [
+        {
+          "kind": "flat_usd",
+          "value": 1.0,
+          "source": "stored",
+          "label": "USDT network fee (TRON)"
+        },
+        {
+          "kind": "pct_usd",
+          "value": 0.0025,
+          "source": "stored",
+          "label": "Trading fee 0.25%"
+        },
+        {
+          "kind": "flat_thb",
+          "value": 20,
+          "source": "stored",
+          "label": "THB withdrawal fee"
+        }
+      ]
     }
   ]
 }
