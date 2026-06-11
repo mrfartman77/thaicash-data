@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "catalogUpdated": "2026-06-11T11:00Z",
+  "catalogUpdated": "2026-06-11T12:00Z",
   "directories": {
     "atm_cash": {
       "title": "Find an ATM",
@@ -9,19 +9,19 @@
         { "id": "aeon", "name": "AEON", "feeThb": 150,
           "areas": "Big C · AEON malls · MaxValu",
           "note": "Cheapest machine fee in Thailand. Dispenses up to ฿20,000 a pull.",
-          "mapsQuery": "AEON ATM" },
+          "mapsQuery": "AEON ATM", "mapsNear": "13.7563,100.5018" },
         { "id": "krungsri", "name": "Krungsri (yellow)", "feeThb": 220,
           "areas": "Yellow machines · branches everywhere",
           "note": "Dispenses up to ฿30,000 a pull — fewer fees on big withdrawals.",
-          "mapsQuery": "Krungsri ATM" },
+          "mapsQuery": "Krungsri ATM", "mapsNear": "13.7563,100.5018" },
         { "id": "bangkok_bank", "name": "Bangkok Bank (blue)", "feeThb": 220,
           "areas": "Blue machines · branches everywhere",
           "note": "Up to ฿25,000 a pull.",
-          "mapsQuery": "Bangkok Bank ATM" },
+          "mapsQuery": "Bangkok Bank ATM", "mapsNear": "13.7563,100.5018" },
         { "id": "kasikorn", "name": "Kasikorn (green)", "feeThb": 250,
           "areas": "Green machines · branches everywhere",
           "note": "Raised its foreign-card fee to ฿250 in 2025.",
-          "mapsQuery": "Kasikorn Bank ATM" }
+          "mapsQuery": "Kasikorn Bank ATM", "mapsNear": "13.7563,100.5018" }
       ]
     }
   },
