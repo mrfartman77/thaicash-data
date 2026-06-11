@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Guard for catalog.json pushes — stdlib only.
+"""Guard for catalog.json pushes — stdlib only. Schema 5: corridors.
 
 The app never crashes on a bad catalog: JSONDecoder fails, the refresh is
 dropped, and every install silently keeps its cached copy forever. That
@@ -22,7 +22,7 @@ import json
 import re
 import sys
 
-SCHEMA_VERSION = 4
+SCHEMA_VERSION = 5
 GROUPS = {"cash_in_hand", "thb_in_bank", "crypto_thb_bank"}
 RATE_SOURCES = {"mid_market", "quoted", "mid_market_margin"}
 FEE_KINDS = {"rate_margin", "pct_usd", "flat_usd", "flat_thb"}
@@ -88,14 +88,14 @@ def check_fee(fee, where):
                 err(f"{where}: unknown when-key {key!r}")
 
 
-def check_leg(leg, index):
-    where = f"legs[{index}]"
+def check_leg(leg, index, corridor="top"):
+    where = f"{corridor}.legs[{index}]"
     if not isinstance(leg, dict):
         err(f"{where}: not an object")
         return None
     leg_id = require_str(leg, "id", where)
     if leg_id:
-        where = f"legs[{index}] ({leg_id})"
+        where = f"{corridor}.legs[{index}] ({leg_id})"
     require_str(leg, "label", where)
     group = leg.get("group")
     if group not in GROUPS:
@@ -113,6 +113,10 @@ def check_leg(leg, index):
             err(f"{where}: '{key}' must be a number")
     if "freeAtmWithdrawals" in leg and not isinstance(leg["freeAtmWithdrawals"], int):
         err(f"{where}: 'freeAtmWithdrawals' must be an integer")
+    for key in ("subgroup", "subgroupLabel", "subgroupNote", "notes", "linkURL",
+                "speed", "acceptance", "acceptanceNote", "taxFlag", "volatility"):
+        if key in leg and not isinstance(leg[key], str):
+            err(f"{where}: '{key}' must be a string")
     interest = leg.get("interest")
     if interest is not None:
         if not isinstance(interest, dict) or not is_number(interest.get("apr")) \
@@ -137,6 +141,46 @@ def check_entries(entries, where):
         require_str(e, "areas", ew)
 
 
+def check_corridor(cor, index):
+    where = f"corridors[{index}]"
+    if not isinstance(cor, dict):
+        err(f"{where}: not an object")
+        return None
+    cid = require_str(cor, "id", where)
+    if cid:
+        where = f"corridors[{index}] ({cid})"
+    for key in ("base", "baseSymbol", "label"):
+        require_str(cor, key, where)
+
+    legs = cor.get("legs")
+    if not isinstance(legs, list) or not legs:
+        err(f"{where}: 'legs' must be a non-empty list")
+    else:
+        ids = [check_leg(leg, i, where) for i, leg in enumerate(legs)]
+        ids = [i for i in ids if i]
+        dupes = {i for i in ids if ids.count(i) > 1}
+        if dupes:
+            err(f"{where}: duplicate leg ids: {sorted(dupes)}")
+
+    booths = cor.get("booths")
+    if booths is not None:
+        check_entries(booths, f"{where}.booths")
+
+    directories = cor.get("directories")
+    if directories is not None:
+        if not isinstance(directories, dict):
+            err(f"{where}: 'directories' must be an object")
+        else:
+            for key, section in directories.items():
+                dwhere = f"{where}.directories.{key}"
+                if not isinstance(section, dict):
+                    err(f"{dwhere}: not an object")
+                    continue
+                require_str(section, "title", dwhere)
+                check_entries(section.get("entries"), f"{dwhere}.entries")
+    return cid
+
+
 def validate(catalog):
     if not isinstance(catalog, dict):
         err("top level: not a JSON object")
@@ -149,36 +193,15 @@ def validate(catalog):
     if updated and not re.match(r"^\d{4}-\d{2}-\d{2}", updated):
         err(f"catalogUpdated {updated!r} must start with an ISO date (YYYY-MM-DD)")
 
-    for key in ("atmHostFeeThb", "atmCapThb"):
-        if not is_number(catalog.get(key)):
-            err(f"top level: '{key}' must be a number")
-
-    legs = catalog.get("legs")
-    if not isinstance(legs, list) or not legs:
-        err("top level: 'legs' must be a non-empty list")
-    else:
-        ids = [check_leg(leg, i) for i, leg in enumerate(legs)]
-        ids = [i for i in ids if i]
-        dupes = {i for i in ids if ids.count(i) > 1}
-        if dupes:
-            err(f"duplicate leg ids: {sorted(dupes)}")
-
-    booths = catalog.get("booths")
-    if booths is not None:
-        check_entries(booths, "booths")
-
-    directories = catalog.get("directories")
-    if directories is not None:
-        if not isinstance(directories, dict):
-            err("'directories' must be an object")
-        else:
-            for key, section in directories.items():
-                where = f"directories.{key}"
-                if not isinstance(section, dict):
-                    err(f"{where}: not an object")
-                    continue
-                require_str(section, "title", where)
-                check_entries(section.get("entries"), f"{where}.entries")
+    corridors = catalog.get("corridors")
+    if not isinstance(corridors, list) or not corridors:
+        err("top level: 'corridors' must be a non-empty list")
+        return
+    cids = [check_corridor(cor, i) for i, cor in enumerate(corridors)]
+    cids = [c for c in cids if c]
+    dupes = {c for c in cids if cids.count(c) > 1}
+    if dupes:
+        err(f"duplicate corridor ids: {sorted(dupes)}")
 
 
 def check_updated_increases(current, prev_path):
@@ -230,8 +253,9 @@ def main():
             print(f"  - {e}")
         sys.exit(1)
 
-    n_legs = len(catalog.get("legs", []))
-    print(f"OK: {path} — schema {SCHEMA_VERSION}, {n_legs} legs, "
+    corridors = catalog.get("corridors", [])
+    n_legs = sum(len(c.get("legs", [])) for c in corridors if isinstance(c, dict))
+    print(f"OK: {path} — schema {SCHEMA_VERSION}, {len(corridors)} corridors / {n_legs} legs, "
           f"stamped {catalog.get('catalogUpdated')}")
 
 
