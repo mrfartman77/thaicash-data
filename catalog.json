@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "catalogUpdated": "2026-06-12T00:00Z",
+  "catalogUpdated": "2026-06-12T01:00Z",
   "corridors": [
     {
       "id": "usd_thb",
@@ -364,78 +364,6 @@
           "fees": [],
           "linkURL": "https://www.ofx.com/en-us/",
           "speed": "~2–5d"
-        },
-        {
-          "id": "binance_th_usdt",
-          "label": "Binance TH",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "Sell USDT/THB, withdraw to your Thai bank — the ฿20 withdrawal is the only fixed cost. Trading the pair is fee-free in practice (confirmed by real monthly use, June 2026; the standard schedule lists 0.25% and promo terms shift, so glance at the fee line on your order). Assumes you hold USDT — getting it there may cost a network fee depending on your wallet (~$1 on TRON; not counted). Thai KYC required; capital gains via licensed Thai exchanges are income-tax-exempt 2025–2029.",
-          "linkURL": "https://www.binance.th/en/trade/USDT_THB",
-          "fees": [
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        },
-        {
-          "id": "bitkub_usdt",
-          "label": "Bitkub",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "Thailand's biggest THB order book. 0.25% trading fee + ฿20 withdrawal (verified bitkub.com 2026-06-11). Deposit network fee depends on your wallet (~$1 TRON; not counted). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. Compare the live USDT/THB price before selling.",
-          "linkURL": "https://www.bitkub.com/en/market/USDT_THB",
-          "fees": [
-            {
-              "kind": "pct_usd",
-              "value": 0.0025,
-              "source": "stored",
-              "label": "Trading fee 0.25%"
-            },
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        },
-        {
-          "id": "bitazza_usdt",
-          "label": "Bitazza",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "0.25% trading fee + ฿20 withdrawal (0.001% above ฿2M; verified bitazza.co.th 2026-06-11). Deposit network fee depends on your wallet (~$1 TRON; not counted). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. The live book price decides between venues.",
-          "linkURL": "https://trade.bitazza.co.th/spot/USDTTHB",
-          "fees": [
-            {
-              "kind": "pct_usd",
-              "value": 0.0025,
-              "source": "stored",
-              "label": "Trading fee 0.25%"
-            },
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
         }
       ],
       "booths": [
@@ -755,78 +683,6 @@
           "subgroupNote": "Same machine, different card — the card decides the cost. Thai ATMs charge ฿220–250 a pull (modeled at ฿220); AEON machines only ฿150.",
           "amountCapThb": 20000,
           "acceptance": "wide"
-        },
-        {
-          "id": "binance_th_usdt",
-          "label": "Binance TH",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "Sell USDT/THB, withdraw to your Thai bank — the ฿20 withdrawal is the only fixed cost. Trading the pair is fee-free in practice (confirmed by real monthly use, June 2026; the standard schedule lists 0.25% and promo terms shift, so glance at the fee line on your order). Assumes you hold USDT — getting it there may cost a network fee depending on your wallet (~$1 on TRON; not counted). Thai KYC required; capital gains via licensed Thai exchanges are income-tax-exempt 2025–2029. Note: these venues trade USDT only — no EUR pairs exist. Costs are measured against the EUR mid via the USDT cross (USDT ≈ $1); buying USDT with euros on a European exchange typically adds ~0.1–0.3%, not counted.",
-          "linkURL": "https://www.binance.th/en/trade/USDT_THB",
-          "fees": [
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        },
-        {
-          "id": "bitkub_usdt",
-          "label": "Bitkub",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "Thailand's biggest THB order book. 0.25% trading fee + ฿20 withdrawal (verified bitkub.com 2026-06-11). Deposit network fee depends on your wallet (~$1 TRON; not counted). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. Compare the live USDT/THB price before selling. Note: these venues trade USDT only — no EUR pairs exist. Costs are measured against the EUR mid via the USDT cross (USDT ≈ $1); buying USDT with euros on a European exchange typically adds ~0.1–0.3%, not counted.",
-          "linkURL": "https://www.bitkub.com/en/market/USDT_THB",
-          "fees": [
-            {
-              "kind": "pct_usd",
-              "value": 0.0025,
-              "source": "stored",
-              "label": "Trading fee 0.25%"
-            },
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        },
-        {
-          "id": "bitazza_usdt",
-          "label": "Bitazza",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "0.25% trading fee + ฿20 withdrawal (0.001% above ฿2M; verified bitazza.co.th 2026-06-11). Deposit network fee depends on your wallet (~$1 TRON; not counted). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. The live book price decides between venues. Note: these venues trade USDT only — no EUR pairs exist. Costs are measured against the EUR mid via the USDT cross (USDT ≈ $1); buying USDT with euros on a European exchange typically adds ~0.1–0.3%, not counted.",
-          "linkURL": "https://trade.bitazza.co.th/spot/USDTTHB",
-          "fees": [
-            {
-              "kind": "pct_usd",
-              "value": 0.0025,
-              "source": "stored",
-              "label": "Trading fee 0.25%"
-            },
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
         },
         {
           "id": "wise_transfer_bank",
@@ -1278,78 +1134,6 @@
           "acceptance": "wide"
         },
         {
-          "id": "binance_th_usdt",
-          "label": "Binance TH",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "Sell USDT/THB, withdraw to your Thai bank — the ฿20 withdrawal is the only fixed cost. Trading the pair is fee-free in practice (confirmed by real monthly use, June 2026; the standard schedule lists 0.25% and promo terms shift, so glance at the fee line on your order). Assumes you hold USDT — getting it there may cost a network fee depending on your wallet (~$1 on TRON; not counted). Thai KYC required; capital gains via licensed Thai exchanges are income-tax-exempt 2025–2029. Note: these venues trade USDT only — no AUD pairs exist. Costs are measured against the AUD mid via the USDT cross (USDT ≈ $1); buying USDT with Aussie dollars on an Australian exchange typically adds ~0.1–0.6%, not counted.",
-          "linkURL": "https://www.binance.th/en/trade/USDT_THB",
-          "fees": [
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        },
-        {
-          "id": "bitkub_usdt",
-          "label": "Bitkub",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "Thailand's biggest THB order book. 0.25% trading fee + ฿20 withdrawal (verified bitkub.com 2026-06-11). Deposit network fee depends on your wallet (~$1 TRON; not counted). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. Compare the live USDT/THB price before selling. Note: these venues trade USDT only — no AUD pairs exist. Costs are measured against the AUD mid via the USDT cross (USDT ≈ $1); buying USDT with Aussie dollars on an Australian exchange typically adds ~0.1–0.6%, not counted.",
-          "linkURL": "https://www.bitkub.com/en/market/USDT_THB",
-          "fees": [
-            {
-              "kind": "pct_usd",
-              "value": 0.0025,
-              "source": "stored",
-              "label": "Trading fee 0.25%"
-            },
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        },
-        {
-          "id": "bitazza_usdt",
-          "label": "Bitazza",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "0.25% trading fee + ฿20 withdrawal (0.001% above ฿2M; verified bitazza.co.th 2026-06-11). Deposit network fee depends on your wallet (~$1 TRON; not counted). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. The live book price decides between venues. Note: these venues trade USDT only — no AUD pairs exist. Costs are measured against the AUD mid via the USDT cross (USDT ≈ $1); buying USDT with Aussie dollars on an Australian exchange typically adds ~0.1–0.6%, not counted.",
-          "linkURL": "https://trade.bitazza.co.th/spot/USDTTHB",
-          "fees": [
-            {
-              "kind": "pct_usd",
-              "value": 0.0025,
-              "source": "stored",
-              "label": "Trading fee 0.25%"
-            },
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        },
-        {
           "id": "wise_transfer_bank",
           "label": "Wise",
           "group": "thb_in_bank",
@@ -1578,6 +1362,86 @@
           ]
         }
       }
+    },
+    {
+      "id": "usdt_thb",
+      "base": "USDT",
+      "baseSymbol": "₮",
+      "label": "USDT → THB",
+      "legs": [
+        {
+          "id": "binance_th_usdt",
+          "label": "Binance TH",
+          "group": "crypto_thb_bank",
+          "rateSource": "mid_market",
+          "acceptance": "limited",
+          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
+          "volatility": "medium",
+          "notes": "Sell USDT/THB, withdraw to your Thai bank — the ฿20 withdrawal is the only fixed cost. Trading the pair is fee-free in practice (confirmed by real monthly use, June 2026; the standard schedule lists 0.25% and promo terms shift, so glance at the fee line on your order). Assumes you hold USDT — getting it there may cost a network fee depending on your wallet (~$1 on TRON; not counted). Thai KYC required; capital gains via licensed Thai exchanges are income-tax-exempt 2025–2029.",
+          "linkURL": "https://www.binance.th/en/trade/USDT_THB",
+          "fees": [
+            {
+              "kind": "flat_thb",
+              "value": 20,
+              "source": "stored",
+              "label": "THB withdrawal fee"
+            }
+          ],
+          "speed": "~Instant"
+        },
+        {
+          "id": "bitkub_usdt",
+          "label": "Bitkub",
+          "group": "crypto_thb_bank",
+          "rateSource": "mid_market",
+          "acceptance": "limited",
+          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
+          "volatility": "medium",
+          "notes": "Thailand's biggest THB order book. 0.25% trading fee + ฿20 withdrawal (verified bitkub.com 2026-06-11). Deposit network fee depends on your wallet (~$1 TRON; not counted). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. Compare the live USDT/THB price before selling.",
+          "linkURL": "https://www.bitkub.com/en/market/USDT_THB",
+          "fees": [
+            {
+              "kind": "pct_usd",
+              "value": 0.0025,
+              "source": "stored",
+              "label": "Trading fee 0.25%"
+            },
+            {
+              "kind": "flat_thb",
+              "value": 20,
+              "source": "stored",
+              "label": "THB withdrawal fee"
+            }
+          ],
+          "speed": "~Instant"
+        },
+        {
+          "id": "bitazza_usdt",
+          "label": "Bitazza",
+          "group": "crypto_thb_bank",
+          "rateSource": "mid_market",
+          "acceptance": "limited",
+          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
+          "volatility": "medium",
+          "notes": "0.25% trading fee + ฿20 withdrawal (0.001% above ฿2M; verified bitazza.co.th 2026-06-11). Deposit network fee depends on your wallet (~$1 TRON; not counted). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. The live book price decides between venues.",
+          "linkURL": "https://trade.bitazza.co.th/spot/USDTTHB",
+          "fees": [
+            {
+              "kind": "pct_usd",
+              "value": 0.0025,
+              "source": "stored",
+              "label": "Trading fee 0.25%"
+            },
+            {
+              "kind": "flat_thb",
+              "value": 20,
+              "source": "stored",
+              "label": "THB withdrawal fee"
+            }
+          ],
+          "speed": "~Instant"
+        }
+      ]
     }
   ]
 }
