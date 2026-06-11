@@ -1,12 +1,13 @@
-name: booth-rates
+name: rates
 
 on:
   schedule:
-    # Hourly, 01:07–13:07 UTC = 08:07–20:07 Bangkok (booth business hours).
-    # Dense on purpose: GitHub fires schedule events 1.5–4h late on the shared
-    # queue, so more slots = the first morning scrape lands sooner and any
-    # load-shedded slot matters less.
-    - cron: "7 1-13 * * *"
+    # Hourly around the clock: crypto books trade 24/7 and the app's users
+    # are often a dozen time zones from Bangkok. The booth scrapers ride
+    # along harmlessly overnight (boards just don't change). Dense on
+    # purpose: GitHub fires schedule events 1.5–4h late on the shared queue,
+    # so more slots = fresher data and any load-shedded slot matters less.
+    - cron: "7 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -21,11 +22,17 @@ jobs:
       - name: Scrape booth rates
         run: python3 scrapers/booth_rates.py
 
+      - name: Scrape crypto rates
+        # continue-on-error: an all-venues-down hour shouldn't block the
+        # booth feed commit; the scraper keeps the last good file itself.
+        continue-on-error: true
+        run: python3 scrapers/crypto_rates.py
+
       - name: Commit if changed
         run: |
-          git config user.name "booth-rates-bot"
+          git config user.name "rates-bot"
           git config user.email "actions@github.com"
-          git add data/booth-rates.json
+          git add data/booth-rates.json data/crypto-rates.json
           git diff --cached --quiet && echo "no change" && exit 0
-          git commit -m "booth rates $(date -u +%Y-%m-%dT%H:%MZ)"
+          git commit -m "rates $(date -u +%Y-%m-%dT%H:%MZ)"
           git push
