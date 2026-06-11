@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "catalogUpdated": "2026-06-11T13:00Z",
+  "catalogUpdated": "2026-06-11T14:00Z",
   "directories": {
     "atm_cash": {
       "title": "Find an ATM",
@@ -151,7 +151,7 @@
     },
     {
       "id": "wise_transfer_bank",
-      "label": "Wise transfer",
+      "label": "Wise",
       "group": "thb_in_bank",      "rateSource": "mid_market_margin",
       "fxMarginPct": 0.006,
       "taxFlag": "thai_remittance_180d",
