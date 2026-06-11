@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "catalogUpdated": "2026-06-11T14:00Z",
+  "catalogUpdated": "2026-06-11T15:00Z",
   "directories": {
     "atm_cash": {
       "title": "Find an ATM",
@@ -152,10 +152,10 @@
     {
       "id": "wise_transfer_bank",
       "label": "Wise",
-      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
-      "fxMarginPct": 0.006,
+      "group": "thb_in_bank",      "rateSource": "mid_market",
       "taxFlag": "thai_remittance_180d",
       "volatility": "medium",
+      "notes": "Converts at the mid-market rate; the cost is the upfront fee (~0.45% + $0.80, ACH-funded). Debit funding adds 1%, credit 3%. Rate verified against a live comparison 2026-06-11.",
       "fees": [
         { "kind": "flat_usd", "value": 0.80, "source": "stored", "label": "Fixed fee" },
         { "kind": "pct_usd", "value": 0.0045, "feeOn": "send", "source": "stored", "label": "Variable fee" },
@@ -168,12 +168,46 @@
       "id": "remitly_transfer_bank",
       "label": "Remitly",
       "group": "thb_in_bank",      "rateSource": "mid_market_margin",
+      "fxMarginPct": 0.005,
+      "taxFlag": "thai_remittance_180d",
+      "volatility": "medium",
+      "notes": "Economy bank deposit, no fee at this size. The margin moves with promotions — measured ~0.4% on 2026-06-11; express speed or card funding costs more.",
+      "fees": []
+    },
+    {
+      "id": "revolut_transfer_bank",
+      "label": "Revolut",
+      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
+      "fxMarginPct": 0.005,
+      "freeAtmAmountThb": 33000,
+      "taxFlag": "thai_remittance_180d",
+      "volatility": "medium",
+      "notes": "Revolut US: 0.15% transfer fee (min $0.75). Their THB rate carried a ~0.5% spread when measured 2026-06-11 (majors are tighter). Exchanging over $1,000/month adds 0.5%, and converting outside market hours (Fri 5pm–Sun 6pm ET) adds 1%.",
+      "fees": [
+        { "kind": "pct_usd", "value": 0.0015, "minUsd": 0.75, "source": "stored", "label": "Transfer fee" },
+        { "kind": "pct_usd", "value": 0.005, "feeOn": "over_allowance", "when": { "overFreeAtm": true }, "source": "stored", "label": "FX fair-usage over $1k/mo" },
+        { "kind": "rate_margin", "value": 0.01, "when": { "isWeekend": true }, "source": "stored", "label": "Out-of-hours exchange markup" }
+      ]
+    },
+    {
+      "id": "xe_transfer_bank",
+      "label": "Xe",
+      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
+      "fxMarginPct": 0.010,
+      "taxFlag": "thai_remittance_180d",
+      "volatility": "medium",
+      "notes": "No transfer fee over $500 ($3 under). The cost is the rate margin — measured ~1.0% USD→THB on 2026-06-11; Xe's markup varies 0.5–2%.",
+      "fees": []
+    },
+    {
+      "id": "ofx_transfer_bank",
+      "label": "OFX",
+      "group": "thb_in_bank",      "rateSource": "mid_market_margin",
       "fxMarginPct": 0.015,
       "taxFlag": "thai_remittance_180d",
       "volatility": "medium",
-      "fees": [
-        { "kind": "flat_usd", "value": 3.99, "source": "stored", "label": "Transfer fee" }
-      ]
+      "notes": "No transfer fee, $150 minimum. Retail margin typically 1–2% on exotics and improves a lot on large transfers — built for big moves; get their live quote above ~$10k.",
+      "fees": []
     }
   ]
 }
