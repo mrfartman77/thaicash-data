@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "catalogUpdated": "2026-06-11T19:00Z",
+  "catalogUpdated": "2026-06-11T20:00Z",
   "directories": {
     "atm_cash": {
       "title": "Find an ATM",
@@ -473,7 +473,7 @@
           "label": "THB withdrawal fee"
         }
       ],
-      "speed": "minutes"
+      "speed": "~instant"
     },
     {
       "id": "bitkub_usdt",
@@ -499,7 +499,7 @@
           "label": "THB withdrawal fee"
         }
       ],
-      "speed": "minutes"
+      "speed": "~instant"
     },
     {
       "id": "bitazza_usdt",
@@ -525,7 +525,7 @@
           "label": "THB withdrawal fee"
         }
       ],
-      "speed": "minutes"
+      "speed": "~instant"
     }
   ]
 }
