@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "catalogUpdated": "2026-06-12T03:00Z",
+  "catalogUpdated": "2026-06-12T04:00Z",
   "corridors": [
     {
       "id": "usd_thb",
@@ -26,7 +26,7 @@
           "rateSource": "mid_market_margin",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "fxMarginPct": 0.003,
           "amountCapThb": 20000,
           "acceptance": "wide",
@@ -42,7 +42,7 @@
           "rateSource": "mid_market",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "freeAtmAmountThb": 8200,
           "acceptance": "wide",
@@ -92,7 +92,7 @@
           "rateSource": "mid_market",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "freeAtmAmountThb": 33000,
           "acceptance": "wide",
@@ -141,7 +141,7 @@
           "rateSource": "mid_market",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "notes": "Modeled on your own bank's fees — set your foreign-transaction fee and ATM fee in Setup to make this exact.",
           "amountCapThb": 20000,
           "acceptance": "wide",
@@ -187,7 +187,7 @@
           "rateSource": "mid_market",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "limited",
           "acceptanceNote": "Amex / Discover often rejected at Thai ATMs",
@@ -420,16 +420,6 @@
           "footer": "The machine's fee stacks on your card's costs — the ranking above models ฿250. The ATM shows its fee before you confirm. Whatever the machine, always decline the on-screen conversion (DCC).",
           "entries": [
             {
-              "id": "aeon",
-              "name": "AEON",
-              "feeThb": 150,
-              "areas": "Big C · AEON malls · MaxValu",
-              "note": "Cheapest machine fee in Thailand. Dispenses up to ฿20,000 a pull. Maps opens their Exchange Tower flagship (BTS Asok).",
-              "mapsQuery": "AEON Thana Sinsap 388 Sukhumvit Road Bangkok",
-              "mapsPlaceId": "IBEFD12DD40BE93D4",
-              "mapsNear": "13.7563,100.5018"
-            },
-            {
               "id": "krungsri",
               "name": "Krungsri (yellow)",
               "feeThb": 250,
@@ -498,7 +488,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -538,7 +528,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -583,7 +573,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -629,7 +619,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -680,7 +670,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -859,16 +849,6 @@
           "footer": "The machine's fee stacks on your card's costs — the ranking above models ฿250. The ATM shows its fee before you confirm. Whatever the machine, always decline the on-screen conversion (DCC).",
           "entries": [
             {
-              "id": "aeon",
-              "name": "AEON",
-              "feeThb": 150,
-              "areas": "Big C · AEON malls · MaxValu",
-              "note": "Cheapest machine fee in Thailand. Dispenses up to ฿20,000 a pull. Maps opens their Exchange Tower flagship (BTS Asok).",
-              "mapsQuery": "AEON Thana Sinsap 388 Sukhumvit Road Bangkok",
-              "mapsPlaceId": "IBEFD12DD40BE93D4",
-              "mapsNear": "13.7563,100.5018"
-            },
-            {
               "id": "krungsri",
               "name": "Krungsri (yellow)",
               "feeThb": 250,
@@ -937,7 +917,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -977,7 +957,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -1032,7 +1012,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -1078,7 +1058,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -1129,7 +1109,7 @@
           "group": "cash_in_hand",
           "subgroup": "atm_cash",
           "subgroupLabel": "ATM withdrawal",
-          "subgroupNote": "Same machine, different card — the card decides the cost. Most Thai bank ATMs charge ฿250 a pull since mid-2025 (modeled at ฿250; Kasikorn adds ฿350 on Mastercard); AEON machines only ฿150.",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
           "amountCapThb": 20000,
           "acceptance": "wide"
         },
@@ -1323,16 +1303,6 @@
           "footer": "The machine's fee stacks on your card's costs — the ranking above models ฿250. The ATM shows its fee before you confirm. Whatever the machine, always decline the on-screen conversion (DCC).",
           "entries": [
             {
-              "id": "aeon",
-              "name": "AEON",
-              "feeThb": 150,
-              "areas": "Big C · AEON malls · MaxValu",
-              "note": "Cheapest machine fee in Thailand. Dispenses up to ฿20,000 a pull. Maps opens their Exchange Tower flagship (BTS Asok).",
-              "mapsQuery": "AEON Thana Sinsap 388 Sukhumvit Road Bangkok",
-              "mapsPlaceId": "IBEFD12DD40BE93D4",
-              "mapsNear": "13.7563,100.5018"
-            },
-            {
               "id": "krungsri",
               "name": "Krungsri (yellow)",
               "feeThb": 250,
@@ -1357,6 +1327,295 @@
               "feeThb": 250,
               "areas": "Green machines · branches everywhere",
               "note": "฿250 for Visa, ฿350 for Mastercard — the priciest since its 2025 hike.",
+              "mapsQuery": "Kasikorn Bank ATM",
+              "mapsNear": "13.7563,100.5018"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cny_thb",
+      "base": "CNY",
+      "baseSymbol": "¥",
+      "label": "CNY → THB",
+      "basePresets": [
+        2000,
+        5000,
+        10000,
+        20000
+      ],
+      "legs": [
+        {
+          "id": "booth",
+          "label": "Exchange booth",
+          "group": "cash_in_hand",
+          "rateSource": "quoted",
+          "typicalBoothMargin": 0.006,
+          "acceptance": "wide",
+          "volatility": "low",
+          "notes": "Reputable booths charge no commission — the rate is the whole story. Bring crisp ¥100 notes (¥50s get the same headline rate; ¥20s lose ~10%, ¥5s ~20% — measured 2026-06-11). Passport required. PRC cash-carry limits apply: ¥20,000 RMB / US$5,000-equivalent without paperwork.",
+          "fees": []
+        },
+        {
+          "id": "unionpay_atm",
+          "label": "UnionPay debit · ATM",
+          "group": "cash_in_hand",
+          "rateSource": "mid_market_margin",
+          "subgroup": "atm_cash",
+          "subgroupLabel": "ATM withdrawal",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
+          "fxMarginPct": 0.002,
+          "amountCapThb": 20000,
+          "acceptance": "wide",
+          "volatility": "low",
+          "notes": "The standard mainland rail (big-4 official schedules, verified 2026-06-11): UnionPay's network rate runs close to interbank (~0.2% modeled), your issuer charges ~1% + ¥12 per withdrawal (capped ~¥112 — ICBC/BOC/CCB alike), and Thai machines charge UnionPay the same ฿250 as Visa. SAFE caps: ¥10,000-equivalent/day, ¥100,000/year across all your cards. Set your bank's exact numbers in Setup.",
+          "fees": [
+            {
+              "kind": "pct_usd",
+              "value": 0.01,
+              "source": "user",
+              "profileKey": "bank_ftf",
+              "label": "Issuer withdrawal fee"
+            },
+            {
+              "kind": "flat_usd",
+              "value": 12,
+              "per": "withdrawal",
+              "source": "user",
+              "profileKey": "bank_atm_fee",
+              "label": "Issuer fixed fee"
+            },
+            {
+              "kind": "flat_thb",
+              "value": 250,
+              "per": "withdrawal",
+              "source": "stored",
+              "label": "Thai ATM fee"
+            },
+            {
+              "kind": "rate_margin",
+              "value": 0.05,
+              "when": {
+                "dccAccepted": true
+              },
+              "source": "stored",
+              "label": "DCC markup"
+            }
+          ]
+        },
+        {
+          "id": "cc_advance",
+          "label": "Your credit card · ATM",
+          "group": "cash_in_hand",
+          "rateSource": "mid_market",
+          "subgroup": "atm_cash",
+          "subgroupLabel": "ATM withdrawal",
+          "subgroupNote": "Same machine, different card — the card decides the cost. Thai bank ATMs charge ฿250 a pull (modeled at ฿250; Mastercard pays ฿350 at some banks).",
+          "amountCapThb": 20000,
+          "acceptance": "wide",
+          "volatility": "low",
+          "notes": "Cash advances on dual-currency Visa/MC cards (issuer schedules, verified 2026-06-11): ~3% fee (min ¥30) plus interest at 0.05%/day (~18.25% APR) from day one, no grace period — modeled assuming a 30-day payoff. The 1.5% currency-conversion fee stacks on top (waived on 全币种 all-currency cards). Thai machines: ฿250 Visa, ฿350 Mastercard.",
+          "interest": {
+            "apr": 0.1825,
+            "accruesOnFees": true
+          },
+          "fees": [
+            {
+              "kind": "pct_usd",
+              "value": 0.03,
+              "minUsd": 30,
+              "source": "user",
+              "profileKey": "ca_fee",
+              "interestBase": true,
+              "label": "Cash-advance fee"
+            },
+            {
+              "kind": "pct_usd",
+              "value": 0.015,
+              "source": "stored",
+              "label": "Currency-conversion fee 1.5%"
+            },
+            {
+              "kind": "flat_thb",
+              "value": 250,
+              "per": "withdrawal",
+              "source": "stored",
+              "label": "Thai ATM fee"
+            },
+            {
+              "kind": "rate_margin",
+              "value": 0.05,
+              "when": {
+                "dccAccepted": true
+              },
+              "source": "stored",
+              "label": "DCC markup"
+            }
+          ]
+        },
+        {
+          "id": "alipay_remit_bank",
+          "label": "Alipay Flash Remit",
+          "group": "thb_in_bank",
+          "rateSource": "mid_market_margin",
+          "fxMarginPct": 0.004,
+          "taxFlag": "thai_remittance_180d",
+          "volatility": "medium",
+          "speed": "~Instant",
+          "notes": "闪速汇出 — the official RMB-native channel to a Thai bank account: 0.5% fee (min ¥100), arrives in minutes, and it does NOT consume the US$50k FX quota. Limits: ¥50,000/transfer, ¥300,000/year, 5/month; travel and study purposes only. Alipay's in-app CNY→THB rate carries a small unpublished margin (modeled ~0.4% — check the quote on screen). Verified 2026-06-11.",
+          "linkURL": "https://www.alipay.com",
+          "fees": [
+            {
+              "kind": "pct_usd",
+              "value": 0.005,
+              "minUsd": 100,
+              "source": "stored",
+              "label": "Remit fee 0.5%"
+            }
+          ]
+        },
+        {
+          "id": "bank_swift_bank",
+          "label": "Bank wire (SWIFT)",
+          "group": "thb_in_bank",
+          "rateSource": "mid_market_margin",
+          "fxMarginPct": 0.004,
+          "taxFlag": "thai_remittance_180d",
+          "volatility": "medium",
+          "speed": "~1–3d",
+          "notes": "The big-sum route, within your US$50k annual quota (ID + purpose declaration at the bank). Bank of China's schedule as the reference (verified 2026-06-11): 0.1% handling (min ¥50, max ¥260) + ¥150 cable + ~0.4% retail FX margin; the Thai bank takes ~฿200–500 on arrival (modeled ฿350) and intermediaries can deduct $10–30. Wise, Remitly, Xe and the like cannot send CNY from the mainland.",
+          "fees": [
+            {
+              "kind": "pct_usd",
+              "value": 0.001,
+              "minUsd": 50,
+              "maxUsd": 260,
+              "source": "stored",
+              "label": "Handling fee"
+            },
+            {
+              "kind": "flat_usd",
+              "value": 150,
+              "source": "stored",
+              "label": "Cable fee"
+            },
+            {
+              "kind": "flat_thb",
+              "value": 350,
+              "source": "stored",
+              "label": "Thai bank inbound fee (~฿200–500)"
+            }
+          ]
+        },
+        {
+          "id": "western_union_bank",
+          "label": "Western Union",
+          "group": "thb_in_bank",
+          "rateSource": "mid_market_margin",
+          "fxMarginPct": 0.02,
+          "taxFlag": "thai_remittance_180d",
+          "volatility": "high",
+          "speed": "~Instant",
+          "notes": "Counter-only from the mainland and USD-intermediated: you buy USD inside the $50k quota at a partner bank (PSBC, ABC, CCB…), pay a tiered $15–40 fee, and WU converts to THB (~2% combined margin modeled). Cash pickup in minutes at Krungthai/Bangkok Bank/Thailand Post; bank deposit also available. Verified 2026-06-11.",
+          "linkURL": "https://www.westernunion.com",
+          "fees": [
+            {
+              "kind": "flat_usd",
+              "value": 170,
+              "source": "stored",
+              "label": "Transfer fee (tiered, ≈¥170 at ¥8k)"
+            }
+          ]
+        }
+      ],
+      "booths": [
+        {
+          "id": "superrich_th",
+          "name": "SuperRich Thailand",
+          "quality": "best",
+          "areas": "45 Soi Ratchadamri 1 HQ · counters at major BTS stops",
+          "note": "The benchmark board. Big, clean $100 notes get the top rate.",
+          "mapsQuery": "Superrich Thailand 45 Soi Ratchadamri 1 Bangkok",
+          "mapsPlaceId": "IE4920E89755E16FA"
+        },
+        {
+          "id": "superrich_1965",
+          "name": "SuperRich 1965",
+          "quality": "best",
+          "areas": "67-69 Ratchadamri Soi 2 · Silom",
+          "mapsQuery": "Super Rich 1965 67-69 Ratchadamri Soi 2 Bangkok",
+          "mapsPlaceId": "I6CC073A462A30F17"
+        },
+        {
+          "id": "vasu",
+          "name": "Vasu Exchange",
+          "quality": "best",
+          "areas": "133 Sukhumvit Rd · BTS Nana",
+          "mapsQuery": "Vasu Exchange 133 Sukhumvit Road Bangkok",
+          "mapsPlaceId": "I2CA0D46D648E97D3"
+        },
+        {
+          "id": "siam_exchange",
+          "name": "Siam Exchange",
+          "quality": "good",
+          "areas": "422/3 Phaya Thai Rd · BTS National Stadium",
+          "mapsQuery": "Siam Exchange 422/3 Phaya Thai Road Pathum Wan Bangkok"
+        },
+        {
+          "id": "k79",
+          "name": "K79 Exchange",
+          "quality": "good",
+          "areas": "2063 Sukhumvit Rd · BTS On Nut",
+          "mapsQuery": "K79 Money Exchange 2063 Sukhumvit Road On Nut Bangkok"
+        },
+        {
+          "id": "airport_bank",
+          "name": "Airport & bank counters",
+          "quality": "avoid",
+          "areas": "Everywhere convenient",
+          "note": "Convenience is priced in — typically 1.5–3% worse than the chains above."
+        }
+      ],
+      "directories": {
+        "atm_cash": {
+          "title": "Find an ATM",
+          "footer": "The machine's fee stacks on your card's costs — UnionPay pays ฿250 like Visa (Mastercard ฿350 at some banks). The ATM shows its fee before you confirm. Always decline the on-screen conversion (DCC).",
+          "entries": [
+            {
+              "id": "krungsri",
+              "name": "Krungsri (yellow)",
+              "feeThb": 250,
+              "areas": "Yellow machines · branches everywhere",
+              "note": "Dispenses up to ฿30,000 a pull — fewest ฿250 fees on big withdrawals.",
+              "mapsQuery": "Krungsri ATM",
+              "mapsNear": "13.7563,100.5018"
+            },
+            {
+              "id": "icbc_thai",
+              "name": "ICBC (Thai)",
+              "feeThb": 250,
+              "areas": "Bangkok branches · Visa & UnionPay only",
+              "note": "Up to ฿25,000 a pull; ICBC-issued cards have historically gotten fee breaks here.",
+              "mapsQuery": "ICBC Thai Bank",
+              "mapsNear": "13.7563,100.5018"
+            },
+            {
+              "id": "bangkok_bank",
+              "name": "Bangkok Bank (blue)",
+              "feeThb": 250,
+              "areas": "Blue machines · branches everywhere",
+              "note": "Up to ฿25,000 a pull. Maps opens the Silom head office.",
+              "mapsQuery": "Bangkok Bank 333 Silom Road Bangkok",
+              "mapsPlaceId": "IE739F4D148907E13",
+              "mapsNear": "13.7563,100.5018"
+            },
+            {
+              "id": "kasikorn",
+              "name": "Kasikorn (green)",
+              "feeThb": 250,
+              "areas": "Green machines · branches everywhere",
+              "note": "฿250 for UnionPay/Visa, ฿350 for Mastercard.",
               "mapsQuery": "Kasikorn Bank ATM",
               "mapsNear": "13.7563,100.5018"
             }
