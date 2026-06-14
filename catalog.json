@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "catalogUpdated": "2026-06-12T05:00Z",
+  "catalogUpdated": "2026-06-14T05:00Z",
   "corridors": [
     {
       "id": "usd_thb",
@@ -1728,7 +1728,8 @@
           ],
           "speed": "~Instant"
         }
-      ]
+      ],
+      "stablecoin": true
     }
   ]
 }
