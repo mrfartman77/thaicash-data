@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "catalogUpdated": "2026-06-14T06:00Z",
+  "catalogUpdated": "2026-06-14T07:00Z",
   "corridors": [
     {
       "id": "usd_thb",
@@ -434,7 +434,7 @@
               "feeThb": 250,
               "areas": "Bangkok branches · Visa & UnionPay only",
               "note": "Up to ฿25,000 a pull — but no Mastercard (Visa & UnionPay only).",
-              "mapsQuery": "ICBC Thai Bank",
+              "mapsQuery": "ICBC ATM",
               "mapsNear": "13.7563,100.5018"
             },
             {
@@ -442,9 +442,8 @@
               "name": "Bangkok Bank (blue)",
               "feeThb": 250,
               "areas": "Blue machines · branches everywhere",
-              "note": "Up to ฿25,000 a pull. Maps opens the Silom head office.",
-              "mapsQuery": "Bangkok Bank 333 Silom Road Bangkok",
-              "mapsPlaceId": "IE739F4D148907E13",
+              "note": "Up to ฿25,000 a pull.",
+              "mapsQuery": "Bangkok Bank",
               "mapsNear": "13.7563,100.5018"
             },
             {
@@ -953,7 +952,7 @@
               "feeThb": 250,
               "areas": "Bangkok branches · Visa & UnionPay only",
               "note": "Up to ฿25,000 a pull — but no Mastercard (Visa & UnionPay only).",
-              "mapsQuery": "ICBC Thai Bank",
+              "mapsQuery": "ICBC ATM",
               "mapsNear": "13.7563,100.5018"
             },
             {
@@ -961,9 +960,8 @@
               "name": "Bangkok Bank (blue)",
               "feeThb": 250,
               "areas": "Blue machines · branches everywhere",
-              "note": "Up to ฿25,000 a pull. Maps opens the Silom head office.",
-              "mapsQuery": "Bangkok Bank 333 Silom Road Bangkok",
-              "mapsPlaceId": "IE739F4D148907E13",
+              "note": "Up to ฿25,000 a pull.",
+              "mapsQuery": "Bangkok Bank",
               "mapsNear": "13.7563,100.5018"
             },
             {
@@ -1416,7 +1414,7 @@
               "feeThb": 250,
               "areas": "Bangkok branches · Visa & UnionPay only",
               "note": "Up to ฿25,000 a pull — but no Mastercard (Visa & UnionPay only).",
-              "mapsQuery": "ICBC Thai Bank",
+              "mapsQuery": "ICBC ATM",
               "mapsNear": "13.7563,100.5018"
             },
             {
@@ -1424,9 +1422,8 @@
               "name": "Bangkok Bank (blue)",
               "feeThb": 250,
               "areas": "Blue machines · branches everywhere",
-              "note": "Up to ฿25,000 a pull. Maps opens the Silom head office.",
-              "mapsQuery": "Bangkok Bank 333 Silom Road Bangkok",
-              "mapsPlaceId": "IE739F4D148907E13",
+              "note": "Up to ฿25,000 a pull.",
+              "mapsQuery": "Bangkok Bank",
               "mapsNear": "13.7563,100.5018"
             },
             {
@@ -1705,7 +1702,7 @@
               "feeThb": 250,
               "areas": "Bangkok branches · Visa & UnionPay only",
               "note": "Up to ฿25,000 a pull; ICBC-issued cards have historically gotten fee breaks here.",
-              "mapsQuery": "ICBC Thai Bank",
+              "mapsQuery": "ICBC ATM",
               "mapsNear": "13.7563,100.5018"
             },
             {
@@ -1713,9 +1710,8 @@
               "name": "Bangkok Bank (blue)",
               "feeThb": 250,
               "areas": "Blue machines · branches everywhere",
-              "note": "Up to ฿25,000 a pull. Maps opens the Silom head office.",
-              "mapsQuery": "Bangkok Bank 333 Silom Road Bangkok",
-              "mapsPlaceId": "IE739F4D148907E13",
+              "note": "Up to ฿25,000 a pull.",
+              "mapsQuery": "Bangkok Bank",
               "mapsNear": "13.7563,100.5018"
             },
             {
