@@ -1,6 +1,6 @@
 {
   "schemaVersion": 5,
-  "catalogUpdated": "2026-06-14T05:00Z",
+  "catalogUpdated": "2026-06-14T06:00Z",
   "corridors": [
     {
       "id": "usd_thb",
@@ -459,6 +459,87 @@
           ]
         }
       }
+    },
+    {
+      "id": "usdt_thb",
+      "base": "USDT",
+      "baseSymbol": "₮",
+      "label": "USDT → THB",
+      "legs": [
+        {
+          "id": "binance_th_usdt",
+          "label": "Binance TH",
+          "group": "crypto_thb_bank",
+          "rateSource": "mid_market",
+          "acceptance": "limited",
+          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
+          "volatility": "medium",
+          "notes": "Sell USDT/THB, withdraw to your Thai bank — the ฿20 withdrawal is the only fixed cost. Trading the pair is fee-free in practice (confirmed by real monthly use, June 2026; the standard schedule lists 0.25% and promo terms shift, so glance at the fee line on your order). Assumes you already hold USDT. Thai KYC required; capital gains via licensed Thai exchanges are income-tax-exempt 2025–2029.",
+          "linkURL": "https://www.binance.th/en/trade/USDT_THB",
+          "fees": [
+            {
+              "kind": "flat_thb",
+              "value": 20,
+              "source": "stored",
+              "label": "THB withdrawal fee"
+            }
+          ],
+          "speed": "~Instant"
+        },
+        {
+          "id": "bitkub_usdt",
+          "label": "Bitkub",
+          "group": "crypto_thb_bank",
+          "rateSource": "mid_market",
+          "acceptance": "limited",
+          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
+          "volatility": "medium",
+          "notes": "Thailand's biggest THB order book. 0.25% trading fee + ฿20 withdrawal (verified bitkub.com 2026-06-11). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. Compare the live USDT/THB price before selling.",
+          "linkURL": "https://www.bitkub.com/en/market/USDT_THB",
+          "fees": [
+            {
+              "kind": "pct_usd",
+              "value": 0.0025,
+              "source": "stored",
+              "label": "Trading fee 0.25%"
+            },
+            {
+              "kind": "flat_thb",
+              "value": 20,
+              "source": "stored",
+              "label": "THB withdrawal fee"
+            }
+          ],
+          "speed": "~Instant"
+        },
+        {
+          "id": "bitazza_usdt",
+          "label": "Bitazza",
+          "group": "crypto_thb_bank",
+          "rateSource": "mid_market",
+          "acceptance": "limited",
+          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
+          "volatility": "medium",
+          "notes": "0.25% trading fee + ฿20 withdrawal (0.001% above ฿2M; verified bitazza.co.th 2026-06-11). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. The live book price decides between venues.",
+          "linkURL": "https://trade.bitazza.co.th/spot/USDTTHB",
+          "fees": [
+            {
+              "kind": "pct_usd",
+              "value": 0.0025,
+              "source": "stored",
+              "label": "Trading fee 0.25%"
+            },
+            {
+              "kind": "flat_thb",
+              "value": 20,
+              "source": "stored",
+              "label": "THB withdrawal fee"
+            }
+          ],
+          "speed": "~Instant"
+        }
+      ],
+      "stablecoin": true
     },
     {
       "id": "eur_thb",
@@ -1649,87 +1730,6 @@
           ]
         }
       }
-    },
-    {
-      "id": "usdt_thb",
-      "base": "USDT",
-      "baseSymbol": "₮",
-      "label": "USDT → THB",
-      "legs": [
-        {
-          "id": "binance_th_usdt",
-          "label": "Binance TH",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "Sell USDT/THB, withdraw to your Thai bank — the ฿20 withdrawal is the only fixed cost. Trading the pair is fee-free in practice (confirmed by real monthly use, June 2026; the standard schedule lists 0.25% and promo terms shift, so glance at the fee line on your order). Assumes you already hold USDT. Thai KYC required; capital gains via licensed Thai exchanges are income-tax-exempt 2025–2029.",
-          "linkURL": "https://www.binance.th/en/trade/USDT_THB",
-          "fees": [
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        },
-        {
-          "id": "bitkub_usdt",
-          "label": "Bitkub",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "Thailand's biggest THB order book. 0.25% trading fee + ฿20 withdrawal (verified bitkub.com 2026-06-11). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. Compare the live USDT/THB price before selling.",
-          "linkURL": "https://www.bitkub.com/en/market/USDT_THB",
-          "fees": [
-            {
-              "kind": "pct_usd",
-              "value": 0.0025,
-              "source": "stored",
-              "label": "Trading fee 0.25%"
-            },
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        },
-        {
-          "id": "bitazza_usdt",
-          "label": "Bitazza",
-          "group": "crypto_thb_bank",
-          "rateSource": "mid_market",
-          "acceptance": "limited",
-          "acceptanceNote": "Needs Thai KYC — passport + Thai bank account",
-          "volatility": "medium",
-          "notes": "0.25% trading fee + ฿20 withdrawal (0.001% above ฿2M; verified bitazza.co.th 2026-06-11). Thai KYC required; licensed-venue capital gains are income-tax-exempt 2025–2029. The live book price decides between venues.",
-          "linkURL": "https://trade.bitazza.co.th/spot/USDTTHB",
-          "fees": [
-            {
-              "kind": "pct_usd",
-              "value": 0.0025,
-              "source": "stored",
-              "label": "Trading fee 0.25%"
-            },
-            {
-              "kind": "flat_thb",
-              "value": 20,
-              "source": "stored",
-              "label": "THB withdrawal fee"
-            }
-          ],
-          "speed": "~Instant"
-        }
-      ],
-      "stablecoin": true
     }
   ]
 }
