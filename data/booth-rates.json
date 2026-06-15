@@ -1,38 +1,44 @@
 {
   "version": 2,
-  "updated": "2026-06-14T23:23:46Z",
+  "updated": "2026-06-15T05:24:10Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
-      "ok": false,
-      "reason": "fetch failed: URLError"
+      "ok": true,
+      "buy": {
+        "USD": 32.5,
+        "EUR": 37.65,
+        "AUD": 22.9,
+        "CNY": 4.79
+      },
+      "fetchedAt": "2026-06-15T05:24:10Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 32.5,
-        "EUR": 37.55,
+        "USD": 32.35,
+        "EUR": 37.5,
         "AUD": 22.75,
         "CNY": 4.79
       },
-      "fetchedAt": "2026-06-14T23:23:46Z",
-      "siteTime": "2026-06-14 14:57:21 +07:00 (site)"
+      "fetchedAt": "2026-06-15T05:24:10Z",
+      "siteTime": "2026-06-15 11:54:33 +07:00 (site)"
     },
     {
       "id": "superrich_th",
       "name": "SuperRich Thailand",
       "ok": true,
       "buy": {
-        "USD": 32.6,
-        "EUR": 37.7,
+        "USD": 32.5,
+        "EUR": 37.65,
         "AUD": 22.9,
-        "CNY": 4.81
+        "CNY": 4.8
       },
-      "fetchedAt": "2026-06-14T23:23:46Z",
-      "siteTime": "2026-06-14T09:02:16.356Z"
+      "fetchedAt": "2026-06-15T05:24:10Z",
+      "siteTime": "2026-06-15T12:19:01.856Z"
     },
     {
       "id": "superrich_1965",
@@ -40,17 +46,23 @@
       "ok": true,
       "buy": {
         "USD": 32.5,
-        "EUR": 37.55,
-        "AUD": 22.75,
-        "CNY": 4.78
+        "EUR": 37.65,
+        "AUD": 22.9,
+        "CNY": 4.8
       },
-      "fetchedAt": "2026-06-14T23:23:46Z"
+      "fetchedAt": "2026-06-15T05:24:10Z"
     },
     {
       "id": "siam_exchange",
       "name": "Siam Exchange",
-      "ok": false,
-      "reason": "CashChanger board stale (2 days ago)"
+      "ok": true,
+      "buy": {
+        "USD": 32.5,
+        "EUR": 37.65
+      },
+      "fetchedAt": "2026-06-15T05:24:10Z",
+      "siteTime": "CashChanger board \u00b7 3 hours ago",
+      "source": "via CashChanger"
     }
   ]
 }
