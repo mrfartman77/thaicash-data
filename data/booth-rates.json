@@ -1,68 +1,68 @@
 {
   "version": 2,
-  "updated": "2026-06-19T01:51:03Z",
+  "updated": "2026-06-19T07:22:43Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
       "ok": true,
       "buy": {
-        "USD": 32.65,
-        "EUR": 37.5,
+        "USD": 32.78,
+        "EUR": 37.45,
         "AUD": 22.85,
         "CNY": 4.8
       },
-      "fetchedAt": "2026-06-19T01:51:03Z"
+      "fetchedAt": "2026-06-19T07:22:43Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 32.35,
-        "EUR": 37.25,
+        "USD": 32.68,
+        "EUR": 37.35,
         "AUD": 22.7,
-        "CNY": 4.79
+        "CNY": 4.81
       },
-      "fetchedAt": "2026-06-19T01:51:03Z",
-      "siteTime": "2026-06-19 07:37:44 +07:00 (site)"
+      "fetchedAt": "2026-06-19T07:22:43Z",
+      "siteTime": "2026-06-19 13:32:14 +07:00 (site)"
     },
     {
       "id": "superrich_th",
       "name": "SuperRich Thailand",
       "ok": true,
       "buy": {
-        "USD": 32.72,
-        "EUR": 37.45,
-        "AUD": 22.85,
+        "USD": 32.81,
+        "EUR": 37.52,
+        "AUD": 22.9,
         "CNY": 4.82
       },
-      "fetchedAt": "2026-06-19T01:51:03Z",
-      "siteTime": "2026-06-19T08:43:01.900Z"
+      "fetchedAt": "2026-06-19T07:22:43Z",
+      "siteTime": "2026-06-19T14:07:17.346Z"
     },
     {
       "id": "superrich_1965",
       "name": "SuperRich 1965",
       "ok": true,
       "buy": {
-        "USD": 32.61,
-        "EUR": 37.4,
-        "AUD": 22.75,
-        "CNY": 4.78
+        "USD": 32.8,
+        "EUR": 37.5,
+        "AUD": 22.9,
+        "CNY": 4.82
       },
-      "fetchedAt": "2026-06-19T01:51:03Z"
+      "fetchedAt": "2026-06-19T07:22:43Z"
     },
     {
       "id": "siam_exchange",
       "name": "Siam Exchange",
       "ok": true,
       "buy": {
-        "USD": 32.68,
+        "USD": 32.8,
         "EUR": 37.5,
         "AUD": 22.9
       },
-      "fetchedAt": "2026-06-19T01:51:03Z",
-      "siteTime": "CashChanger board \u00b7 16 hours ago",
+      "fetchedAt": "2026-06-19T07:22:43Z",
+      "siteTime": "CashChanger board \u00b7 19 minutes ago",
       "source": "via CashChanger"
     }
   ]
