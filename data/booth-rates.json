@@ -1,67 +1,68 @@
 {
   "version": 2,
-  "updated": "2026-06-21T23:40:55Z",
+  "updated": "2026-06-22T05:26:16Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
       "ok": true,
       "buy": {
-        "USD": 32.77,
-        "EUR": 37.55,
-        "AUD": 22.9,
-        "CNY": 4.81
+        "USD": 32.85,
+        "EUR": 37.6,
+        "AUD": 22.95,
+        "CNY": 4.82
       },
-      "fetchedAt": "2026-06-21T23:40:55Z"
+      "fetchedAt": "2026-06-22T05:26:16Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 32.6,
-        "EUR": 37.4,
-        "AUD": 22.75,
-        "CNY": 4.78
+        "USD": 32.7,
+        "EUR": 37.45,
+        "AUD": 22.8,
+        "CNY": 4.82
       },
-      "fetchedAt": "2026-06-21T23:40:55Z",
-      "siteTime": "2026-06-21 10:14:19 +07:00 (site)"
+      "fetchedAt": "2026-06-22T05:26:16Z",
+      "siteTime": "2026-06-22 12:11:04 +07:00 (site)"
     },
     {
       "id": "superrich_th",
       "name": "SuperRich Thailand",
       "ok": true,
       "buy": {
-        "USD": 32.77,
-        "EUR": 37.55,
-        "AUD": 22.9,
-        "CNY": 4.81
+        "USD": 32.85,
+        "EUR": 37.6,
+        "AUD": 22.95,
+        "CNY": 4.83
       },
-      "fetchedAt": "2026-06-21T23:40:55Z",
-      "siteTime": "2026-06-21T09:40:51.210Z"
+      "fetchedAt": "2026-06-22T05:26:16Z",
+      "siteTime": "2026-06-22T12:07:44.850Z"
     },
     {
       "id": "superrich_1965",
       "name": "SuperRich 1965",
       "ok": true,
       "buy": {
-        "USD": 32.65,
-        "EUR": 37.4,
-        "AUD": 22.75,
-        "CNY": 4.78
+        "USD": 32.85,
+        "EUR": 37.6,
+        "AUD": 22.95,
+        "CNY": 4.83
       },
-      "fetchedAt": "2026-06-21T23:40:55Z"
+      "fetchedAt": "2026-06-22T05:26:16Z"
     },
     {
       "id": "siam_exchange",
       "name": "Siam Exchange",
       "ok": true,
       "buy": {
-        "USD": 32.77,
-        "EUR": 37.55
+        "USD": 32.85,
+        "EUR": 37.6,
+        "AUD": 22.95
       },
-      "fetchedAt": "2026-06-21T23:40:55Z",
-      "siteTime": "CashChanger board \u00b7 1 day ago",
+      "fetchedAt": "2026-06-22T05:26:16Z",
+      "siteTime": "CashChanger board \u00b7 45 minutes ago",
       "source": "via CashChanger"
     }
   ]
