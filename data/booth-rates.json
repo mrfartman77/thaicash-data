@@ -1,68 +1,68 @@
 {
   "version": 2,
-  "updated": "2026-06-26T00:20:57Z",
+  "updated": "2026-06-26T05:20:00Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.3,
-        "EUR": 37.8,
+        "USD": 33.35,
+        "EUR": 37.85,
         "AUD": 22.9,
-        "CNY": 4.87
+        "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T00:20:57Z"
+      "fetchedAt": "2026-06-26T05:20:00Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.15,
-        "EUR": 37.6,
+        "USD": 33.2,
+        "EUR": 37.7,
         "AUD": 22.8,
-        "CNY": 4.87
+        "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T00:20:57Z",
-      "siteTime": "2026-06-25 17:32:18 +07:00 (site)"
+      "fetchedAt": "2026-06-26T05:20:00Z",
+      "siteTime": "2026-06-26 10:48:21 +07:00 (site)"
     },
     {
       "id": "superrich_th",
       "name": "SuperRich Thailand",
       "ok": true,
       "buy": {
-        "USD": 33.29,
-        "EUR": 37.75,
-        "AUD": 22.9,
-        "CNY": 4.87
+        "USD": 33.35,
+        "EUR": 37.85,
+        "AUD": 22.95,
+        "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T00:20:57Z",
-      "siteTime": "2026-06-25T17:52:35.366Z"
+      "fetchedAt": "2026-06-26T05:20:00Z",
+      "siteTime": "2026-06-26T11:23:18.673Z"
     },
     {
       "id": "superrich_1965",
       "name": "SuperRich 1965",
       "ok": true,
       "buy": {
-        "USD": 33.22,
-        "EUR": 37.65,
-        "AUD": 22.8,
-        "CNY": 4.85
+        "USD": 33.35,
+        "EUR": 37.85,
+        "AUD": 22.95,
+        "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T00:20:57Z"
+      "fetchedAt": "2026-06-26T05:20:00Z"
     },
     {
       "id": "siam_exchange",
       "name": "Siam Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.29,
-        "EUR": 37.75,
+        "USD": 33.35,
+        "EUR": 37.85,
         "AUD": 22.9
       },
-      "fetchedAt": "2026-06-26T00:20:57Z",
-      "siteTime": "CashChanger board \u00b7 15 hours ago",
+      "fetchedAt": "2026-06-26T05:20:00Z",
+      "siteTime": "CashChanger board \u00b7 1 hour ago",
       "source": "via CashChanger"
     }
   ]
