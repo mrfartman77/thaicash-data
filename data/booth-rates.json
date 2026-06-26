@@ -1,18 +1,12 @@
 {
   "version": 2,
-  "updated": "2026-06-26T15:29:51Z",
+  "updated": "2026-06-26T18:01:42Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
-      "ok": true,
-      "buy": {
-        "USD": 33.28,
-        "EUR": 37.8,
-        "AUD": 22.9,
-        "CNY": 4.87
-      },
-      "fetchedAt": "2026-06-26T15:29:51Z"
+      "ok": false,
+      "reason": "fetch failed: URLError"
     },
     {
       "id": "k79",
@@ -24,7 +18,7 @@
         "AUD": 22.8,
         "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T15:29:51Z",
+      "fetchedAt": "2026-06-26T18:01:42Z",
       "siteTime": "2026-06-26 16:31:40 +07:00 (site)"
     },
     {
@@ -37,7 +31,7 @@
         "AUD": 22.9,
         "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T15:29:51Z",
+      "fetchedAt": "2026-06-26T18:01:42Z",
       "siteTime": "2026-06-26T17:58:00.006Z"
     },
     {
@@ -50,7 +44,7 @@
         "AUD": 22.8,
         "CNY": 4.86
       },
-      "fetchedAt": "2026-06-26T15:29:51Z"
+      "fetchedAt": "2026-06-26T18:01:42Z"
     },
     {
       "id": "siam_exchange",
@@ -61,8 +55,8 @@
         "EUR": 37.85,
         "AUD": 22.9
       },
-      "fetchedAt": "2026-06-26T15:29:51Z",
-      "siteTime": "CashChanger board \u00b7 6 hours ago",
+      "fetchedAt": "2026-06-26T18:01:42Z",
+      "siteTime": "CashChanger board \u00b7 9 hours ago",
       "source": "via CashChanger"
     }
   ]
