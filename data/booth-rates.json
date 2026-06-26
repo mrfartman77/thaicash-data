@@ -1,67 +1,67 @@
 {
   "version": 2,
-  "updated": "2026-06-26T05:20:00Z",
+  "updated": "2026-06-26T09:49:08Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.35,
-        "EUR": 37.85,
+        "USD": 33.26,
+        "EUR": 37.8,
         "AUD": 22.9,
         "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T05:20:00Z"
+      "fetchedAt": "2026-06-26T09:49:08Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.2,
+        "USD": 33.15,
         "EUR": 37.7,
         "AUD": 22.8,
         "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T05:20:00Z",
-      "siteTime": "2026-06-26 10:48:21 +07:00 (site)"
+      "fetchedAt": "2026-06-26T09:49:08Z",
+      "siteTime": "2026-06-26 16:31:40 +07:00 (site)"
     },
     {
       "id": "superrich_th",
       "name": "SuperRich Thailand",
       "ok": true,
       "buy": {
-        "USD": 33.35,
+        "USD": 33.31,
         "EUR": 37.85,
-        "AUD": 22.95,
+        "AUD": 22.9,
         "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T05:20:00Z",
-      "siteTime": "2026-06-26T11:23:18.673Z"
+      "fetchedAt": "2026-06-26T09:49:08Z",
+      "siteTime": "2026-06-26T16:24:08.140Z"
     },
     {
       "id": "superrich_1965",
       "name": "SuperRich 1965",
       "ok": true,
       "buy": {
-        "USD": 33.35,
+        "USD": 33.3,
         "EUR": 37.85,
-        "AUD": 22.95,
+        "AUD": 22.9,
         "CNY": 4.88
       },
-      "fetchedAt": "2026-06-26T05:20:00Z"
+      "fetchedAt": "2026-06-26T09:49:08Z"
     },
     {
       "id": "siam_exchange",
       "name": "Siam Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.35,
+        "USD": 33.31,
         "EUR": 37.85,
         "AUD": 22.9
       },
-      "fetchedAt": "2026-06-26T05:20:00Z",
+      "fetchedAt": "2026-06-26T09:49:08Z",
       "siteTime": "CashChanger board \u00b7 1 hour ago",
       "source": "via CashChanger"
     }
