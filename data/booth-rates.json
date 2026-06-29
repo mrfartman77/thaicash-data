@@ -1,67 +1,67 @@
 {
   "version": 2,
-  "updated": "2026-06-29T06:03:45Z",
+  "updated": "2026-06-29T11:22:15Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.25,
+        "USD": 33.15,
         "EUR": 37.8,
         "AUD": 22.85,
         "CNY": 4.86
       },
-      "fetchedAt": "2026-06-29T06:03:45Z"
+      "fetchedAt": "2026-06-29T11:22:15Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.13,
+        "USD": 33.05,
         "EUR": 37.65,
-        "AUD": 22.75,
+        "AUD": 22.7,
         "CNY": 4.87
       },
-      "fetchedAt": "2026-06-29T06:03:45Z",
-      "siteTime": "2026-06-29 13:00:32 +07:00 (site)"
+      "fetchedAt": "2026-06-29T11:22:15Z",
+      "siteTime": "2026-06-29 17:42:53 +07:00 (site)"
     },
     {
       "id": "superrich_th",
       "name": "SuperRich Thailand",
       "ok": true,
       "buy": {
-        "USD": 33.27,
+        "USD": 33.2,
         "EUR": 37.8,
-        "AUD": 22.85,
+        "AUD": 22.8,
         "CNY": 4.87
       },
-      "fetchedAt": "2026-06-29T06:03:45Z",
-      "siteTime": "2026-06-29T13:00:13.610Z"
+      "fetchedAt": "2026-06-29T11:22:15Z",
+      "siteTime": "2026-06-29T18:04:14.590Z"
     },
     {
       "id": "superrich_1965",
       "name": "SuperRich 1965",
       "ok": true,
       "buy": {
-        "USD": 33.25,
-        "EUR": 37.8,
-        "AUD": 22.85,
-        "CNY": 4.87
+        "USD": 33.13,
+        "EUR": 37.7,
+        "AUD": 22.7,
+        "CNY": 4.85
       },
-      "fetchedAt": "2026-06-29T06:03:45Z"
+      "fetchedAt": "2026-06-29T11:22:15Z"
     },
     {
       "id": "siam_exchange",
       "name": "Siam Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.29,
+        "USD": 33.2,
         "EUR": 37.8,
         "AUD": 22.85
       },
-      "fetchedAt": "2026-06-29T06:03:45Z",
+      "fetchedAt": "2026-06-29T11:22:15Z",
       "siteTime": "CashChanger board \u00b7 1 hour ago",
       "source": "via CashChanger"
     }
