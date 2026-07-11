@@ -10,6 +10,14 @@ on:
     - cron: "7 * * * *"
   workflow_dispatch: {}
 
+# The Cloudflare Worker cron (infra/worker.js) dispatches this workflow
+# punctually every hour; GitHub's own schedule stays as a backup. Serialize
+# so an external dispatch and a late-fired schedule slot never race the
+# commit/push step.
+concurrency:
+  group: booth-rates
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
