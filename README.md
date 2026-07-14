@@ -10,3 +10,9 @@ Public data feed for the ThaiCash iOS app.
   directory). The app ships a bundled seed and prefers this hosted copy.
 - `scrapers/booth_rates.py` — stdlib-only Python, one isolated parser per
   chain. PRs welcome for the pending chains (SuperRich TH/1965, Siam).
+
+## License
+
+Data is **CC BY-NC 4.0** (attribution required, non-commercial only —
+commercial use needs a separate license); code is all rights reserved.
+See [LICENSE.md](LICENSE.md).
