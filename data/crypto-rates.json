@@ -1,27 +1,27 @@
 {
   "version": 1,
-  "updated": "2026-07-15T08:30:23Z",
+  "updated": "2026-07-15T09:00:25Z",
   "rates": [
     {
       "id": "binance_th_usdt",
       "name": "Binance TH",
       "ok": true,
       "thbPerUsdt": 33.52,
-      "fetchedAt": "2026-07-15T08:30:23Z"
+      "fetchedAt": "2026-07-15T09:00:25Z"
     },
     {
       "id": "bitkub_usdt",
       "name": "Bitkub",
       "ok": true,
       "thbPerUsdt": 33.48,
-      "fetchedAt": "2026-07-15T08:30:23Z"
+      "fetchedAt": "2026-07-15T09:00:25Z"
     },
     {
       "id": "bitazza_usdt",
       "name": "Bitazza",
       "ok": true,
       "thbPerUsdt": 33.52,
-      "fetchedAt": "2026-07-15T08:30:23Z"
+      "fetchedAt": "2026-07-15T09:00:25Z"
     }
   ]
 }
