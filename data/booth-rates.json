@@ -1,62 +1,68 @@
 {
   "version": 2,
-  "updated": "2026-07-17T07:01:02Z",
+  "updated": "2026-07-17T07:27:13Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.53,
+        "USD": 33.5,
         "EUR": 38.3,
         "AUD": 23.35,
         "CNY": 4.92
       },
-      "fetchedAt": "2026-07-17T07:01:02Z"
+      "fetchedAt": "2026-07-17T07:27:13Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.38,
-        "EUR": 38.2,
+        "USD": 33.36,
+        "EUR": 38.15,
         "AUD": 23.25,
         "CNY": 4.92
       },
-      "fetchedAt": "2026-07-17T07:01:02Z",
-      "siteTime": "2026-07-17 13:47:16 +07:00 (site)"
+      "fetchedAt": "2026-07-17T07:27:13Z",
+      "siteTime": "2026-07-17 14:23:21 +07:00 (site)"
     },
     {
       "id": "superrich_th",
       "name": "SuperRich Thailand",
       "ok": true,
       "buy": {
-        "USD": 33.53,
-        "EUR": 38.35,
-        "AUD": 23.35,
+        "USD": 33.51,
+        "EUR": 38.3,
+        "AUD": 23.3,
         "CNY": 4.93
       },
-      "fetchedAt": "2026-07-17T07:01:02Z",
-      "siteTime": "2026-07-17T13:46:54.493Z"
+      "fetchedAt": "2026-07-17T07:27:13Z",
+      "siteTime": "2026-07-17T14:08:32.176Z"
     },
     {
       "id": "superrich_1965",
       "name": "SuperRich 1965",
-      "ok": false,
-      "reason": "fetch failed: TimeoutError"
+      "ok": true,
+      "buy": {
+        "USD": 33.51,
+        "EUR": 38.3,
+        "AUD": 23.3,
+        "CNY": 4.92
+      },
+      "fetchedAt": "2026-07-17T07:27:13Z"
     },
     {
       "id": "siam_exchange",
       "name": "Siam Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.53,
+        "USD": 33.5,
         "EUR": 38.3,
         "AUD": 23.35
       },
-      "fetchedAt": "2026-07-17T07:01:02Z",
-      "siteTime": "CashChanger board \u00b7 3 hours ago",
+      "fetchedAt": "2026-07-17T07:27:13Z",
+      "siteTime": "CashChanger board \u00b7 26 minutes ago",
       "source": "via CashChanger"
     }
   ]
