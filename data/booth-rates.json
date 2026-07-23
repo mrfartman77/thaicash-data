@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-07-23T02:01:04Z",
+  "updated": "2026-07-23T02:31:03Z",
   "rates": [
     {
       "id": "vasu",
@@ -12,57 +12,57 @@
         "AUD": 23.5,
         "CNY": 4.95
       },
-      "fetchedAt": "2026-07-23T02:01:04Z"
+      "fetchedAt": "2026-07-23T02:31:03Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.48,
-        "EUR": 38.1,
+        "USD": 33.5,
+        "EUR": 38.15,
         "AUD": 23.35,
         "CNY": 4.95
       },
-      "fetchedAt": "2026-07-23T02:01:04Z",
-      "siteTime": "2026-07-23 08:27:27 +07:00 (site)"
+      "fetchedAt": "2026-07-23T02:31:03Z",
+      "siteTime": "2026-07-23 09:09:41 +07:00 (site)"
     },
     {
       "id": "superrich_th",
       "name": "SuperRich Thailand",
       "ok": true,
       "buy": {
-        "USD": 33.68,
-        "EUR": 38.4,
-        "AUD": 23.5,
+        "USD": 33.7,
+        "EUR": 38.45,
+        "AUD": 23.55,
         "CNY": 4.97
       },
-      "fetchedAt": "2026-07-23T02:01:04Z",
-      "siteTime": "2026-07-23T08:40:04.370Z"
+      "fetchedAt": "2026-07-23T02:31:03Z",
+      "siteTime": "2026-07-23T09:13:12.233Z"
     },
     {
       "id": "superrich_1965",
       "name": "SuperRich 1965",
       "ok": true,
       "buy": {
-        "USD": 33.68,
-        "EUR": 38.4,
+        "USD": 33.7,
+        "EUR": 38.45,
         "AUD": 23.5,
         "CNY": 4.96
       },
-      "fetchedAt": "2026-07-23T02:01:04Z"
+      "fetchedAt": "2026-07-23T02:31:03Z"
     },
     {
       "id": "siam_exchange",
       "name": "Siam Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.73,
-        "EUR": 38.4,
-        "AUD": 23.5
+        "USD": 33.7,
+        "EUR": 38.45,
+        "AUD": 23.55
       },
-      "fetchedAt": "2026-07-23T02:01:04Z",
-      "siteTime": "CashChanger board \u00b7 16 hours ago",
+      "fetchedAt": "2026-07-23T02:31:03Z",
+      "siteTime": "CashChanger board \u00b7 19 minutes ago",
       "source": "via CashChanger"
     }
   ]
