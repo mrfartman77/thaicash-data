@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-08-19T04:47:52Z",
+  "updated": "2026-08-19T05:00:24Z",
   "rates": [
     {
       "id": "vasu",
@@ -12,7 +12,7 @@
         "AUD": 23.3,
         "CNY": 4.88
       },
-      "fetchedAt": "2026-08-19T04:47:52Z"
+      "fetchedAt": "2026-08-19T05:00:24Z"
     },
     {
       "id": "k79",
@@ -24,7 +24,7 @@
         "AUD": 23.2,
         "CNY": 4.88
       },
-      "fetchedAt": "2026-08-19T04:47:52Z",
+      "fetchedAt": "2026-08-19T05:00:24Z",
       "siteTime": "2026-08-19 10:18:37 +07:00 (site)"
     },
     {
@@ -32,13 +32,13 @@
       "name": "SuperRich Thailand",
       "ok": true,
       "buy": {
-        "USD": 33.08,
+        "USD": 33.09,
         "EUR": 38.25,
         "AUD": 23.3,
         "CNY": 4.9
       },
-      "fetchedAt": "2026-08-19T04:47:52Z",
-      "siteTime": "2026-08-19T11:33:56.520Z"
+      "fetchedAt": "2026-08-19T05:00:24Z",
+      "siteTime": "2026-08-19T11:46:12.956Z"
     },
     {
       "id": "superrich_1965",
@@ -55,7 +55,7 @@
         "EUR": 38.25,
         "AUD": 23.3
       },
-      "fetchedAt": "2026-08-19T04:47:52Z",
+      "fetchedAt": "2026-08-19T05:00:24Z",
       "siteTime": "CashChanger board \u00b7 2 hours ago",
       "source": "via CashChanger"
     }
