@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-08-28T08:30:46Z",
+  "updated": "2026-08-28T09:00:38Z",
   "rates": [
     {
       "id": "vasu",
@@ -12,7 +12,7 @@
         "AUD": 23.55,
         "CNY": 4.87
       },
-      "fetchedAt": "2026-08-28T08:30:46Z"
+      "fetchedAt": "2026-08-28T09:00:38Z"
     },
     {
       "id": "k79",
@@ -24,8 +24,8 @@
         "AUD": 23.45,
         "CNY": 4.87
       },
-      "fetchedAt": "2026-08-28T08:30:46Z",
-      "siteTime": "2026-08-28 15:30:25 +07:00 (site)"
+      "fetchedAt": "2026-08-28T09:00:38Z",
+      "siteTime": "2026-08-28 15:53:57 +07:00 (site)"
     },
     {
       "id": "superrich_th",
@@ -48,8 +48,8 @@
         "EUR": 38.2,
         "AUD": 23.6
       },
-      "fetchedAt": "2026-08-28T08:30:46Z",
-      "siteTime": "CashChanger board \u00b7 50 minutes ago",
+      "fetchedAt": "2026-08-28T09:00:38Z",
+      "siteTime": "CashChanger board \u00b7 1 hour ago",
       "source": "via CashChanger"
     }
   ]
