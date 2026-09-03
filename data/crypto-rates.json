@@ -1,26 +1,27 @@
 {
   "version": 1,
-  "updated": "2026-09-03T18:00:51Z",
+  "updated": "2026-09-03T18:30:40Z",
   "rates": [
     {
       "id": "binance_th_usdt",
       "name": "Binance TH",
       "ok": true,
-      "thbPerUsdt": 32.86,
-      "fetchedAt": "2026-09-03T18:00:51Z"
+      "thbPerUsdt": 32.88,
+      "fetchedAt": "2026-09-03T18:30:40Z"
     },
     {
       "id": "bitkub_usdt",
       "name": "Bitkub",
       "ok": true,
-      "thbPerUsdt": 32.86,
-      "fetchedAt": "2026-09-03T18:00:51Z"
+      "thbPerUsdt": 32.87,
+      "fetchedAt": "2026-09-03T18:30:40Z"
     },
     {
       "id": "bitazza_usdt",
       "name": "Bitazza",
-      "ok": false,
-      "reason": "HTTPError: HTTP Error 400: Bad Request"
+      "ok": true,
+      "thbPerUsdt": 32.85,
+      "fetchedAt": "2026-09-03T18:30:40Z"
     }
   ]
 }
