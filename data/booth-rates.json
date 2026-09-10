@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "updated": "2026-09-10T07:31:04Z",
+  "updated": "2026-09-10T08:01:14Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
       "ok": true,
       "buy": {
-        "USD": 32.84,
+        "USD": 32.8,
         "EUR": 38.15,
         "AUD": 23.6,
         "CNY": 4.9
       },
-      "fetchedAt": "2026-09-10T07:31:04Z"
+      "fetchedAt": "2026-09-10T08:01:14Z"
     },
     {
       "id": "k79",
@@ -24,7 +24,7 @@
         "AUD": 23.5,
         "CNY": 4.91
       },
-      "fetchedAt": "2026-09-10T07:31:04Z",
+      "fetchedAt": "2026-09-10T08:01:14Z",
       "siteTime": "2026-09-10 13:18:05 +07:00 (site)"
     },
     {
