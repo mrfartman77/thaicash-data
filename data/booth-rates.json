@@ -1,31 +1,31 @@
 {
   "version": 2,
-  "updated": "2026-09-11T03:30:48Z",
+  "updated": "2026-09-11T04:00:44Z",
   "rates": [
     {
       "id": "vasu",
       "name": "Vasu Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.05,
+        "USD": 33.07,
         "EUR": 38.3,
         "AUD": 23.6,
         "CNY": 4.92
       },
-      "fetchedAt": "2026-09-11T03:30:48Z"
+      "fetchedAt": "2026-09-11T04:00:44Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 32.8,
-        "EUR": 38.45,
+        "USD": 32.9,
+        "EUR": 38.15,
         "AUD": 23.45,
-        "CNY": 4.9
+        "CNY": 4.93
       },
-      "fetchedAt": "2026-09-11T03:30:48Z",
-      "siteTime": "2026-09-11 10:23:41 +07:00 (site)"
+      "fetchedAt": "2026-09-11T04:00:44Z",
+      "siteTime": "2026-09-11 10:38:31 +07:00 (site)"
     },
     {
       "id": "superrich_th",
