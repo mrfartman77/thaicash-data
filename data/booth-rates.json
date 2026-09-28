@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-09-28T00:01:17Z",
+  "updated": "2026-09-28T00:31:27Z",
   "rates": [
     {
       "id": "vasu",
@@ -12,20 +12,20 @@
         "AUD": 23.3,
         "CNY": 4.94
       },
-      "fetchedAt": "2026-09-28T00:01:17Z"
+      "fetchedAt": "2026-09-28T00:31:27Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.13,
-        "EUR": 37.7,
+        "USD": 32.95,
+        "EUR": 37.55,
         "AUD": 23.15,
         "CNY": 4.93
       },
-      "fetchedAt": "2026-09-28T00:01:17Z",
-      "siteTime": "2026-09-27 10:45:09 +07:00 (site)"
+      "fetchedAt": "2026-09-28T00:31:27Z",
+      "siteTime": "2026-09-28 07:28:32 +07:00 (site)"
     },
     {
       "id": "superrich_th",
@@ -43,7 +43,7 @@
         "AUD": 23.15,
         "CNY": 4.93
       },
-      "fetchedAt": "2026-09-28T00:01:17Z"
+      "fetchedAt": "2026-09-28T00:31:27Z"
     },
     {
       "id": "siam_exchange",
