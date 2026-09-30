@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-09-30T08:01:43Z",
+  "updated": "2026-09-30T08:31:42Z",
   "rates": [
     {
       "id": "vasu",
@@ -12,7 +12,7 @@
         "AUD": 23.25,
         "CNY": 4.97
       },
-      "fetchedAt": "2026-09-30T08:01:43Z"
+      "fetchedAt": "2026-09-30T08:31:42Z"
     },
     {
       "id": "k79",
@@ -24,7 +24,7 @@
         "AUD": 23.15,
         "CNY": 4.96
       },
-      "fetchedAt": "2026-09-30T08:01:43Z",
+      "fetchedAt": "2026-09-30T08:31:42Z",
       "siteTime": "2026-09-30 12:45:03 +07:00 (site)"
     },
     {
@@ -43,19 +43,19 @@
         "AUD": 23.25,
         "CNY": 4.97
       },
-      "fetchedAt": "2026-09-30T08:01:43Z"
+      "fetchedAt": "2026-09-30T08:31:42Z"
     },
     {
       "id": "siam_exchange",
       "name": "Siam Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.49,
+        "USD": 33.47,
         "EUR": 37.95,
         "AUD": 23.25
       },
-      "fetchedAt": "2026-09-30T08:01:43Z",
-      "siteTime": "CashChanger board \u00b7 1 hour ago",
+      "fetchedAt": "2026-09-30T08:31:42Z",
+      "siteTime": "CashChanger board \u00b7 50 minutes ago",
       "source": "via CashChanger"
     }
   ]
