@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated": "2026-10-26T00:14:00Z",
+  "updated": "2026-10-26T00:30:28Z",
   "rates": [
     {
       "id": "vasu",
@@ -12,20 +12,20 @@
         "AUD": 23.55,
         "CNY": 5.01
       },
-      "fetchedAt": "2026-10-26T00:14:00Z"
+      "fetchedAt": "2026-10-26T00:30:28Z"
     },
     {
       "id": "k79",
       "name": "K79 Exchange",
       "ok": true,
       "buy": {
-        "USD": 33.55,
-        "EUR": 37.5,
+        "USD": 33.22,
+        "EUR": 37.25,
         "AUD": 23.4,
         "CNY": 5.01
       },
-      "fetchedAt": "2026-10-26T00:14:00Z",
-      "siteTime": "2026-10-25 10:30:10 +07:00 (site)"
+      "fetchedAt": "2026-10-26T00:30:28Z",
+      "siteTime": "2026-10-26 07:18:44 +07:00 (site)"
     },
     {
       "id": "superrich_th",
@@ -43,7 +43,7 @@
         "AUD": 23.4,
         "CNY": 5.0
       },
-      "fetchedAt": "2026-10-26T00:14:00Z"
+      "fetchedAt": "2026-10-26T00:30:28Z"
     },
     {
       "id": "siam_exchange",
@@ -53,7 +53,7 @@
         "USD": 33.65,
         "AUD": 23.55
       },
-      "fetchedAt": "2026-10-26T00:14:00Z",
+      "fetchedAt": "2026-10-26T00:30:28Z",
       "siteTime": "CashChanger board \u00b7 1 day ago",
       "source": "via CashChanger"
     }
